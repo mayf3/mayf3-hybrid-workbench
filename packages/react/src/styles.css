@@ -946,6 +946,23 @@
   [data-mf-premium][data-mf-surface="precision"] .mf-dialog__surface { padding: var(--mf-space-5); }
 }
 
+/* The reference preview opts into translucency on the anchored overlay only.
+ * The high-risk dialog retains the opaque raised surface. */
+@supports (backdrop-filter: blur(0)) {
+  @media (forced-colors: none) {
+    body[data-mf-reference="apple"][data-mf-surface="precision"] .mf-select__popover {
+      background-color: var(--mf-surface-glass);
+      backdrop-filter: blur(var(--mf-material-blur));
+    }
+  }
+  @media (prefers-reduced-transparency: reduce) {
+    body[data-mf-reference="apple"][data-mf-surface="precision"] .mf-select__popover {
+      background-color: var(--mf-surface-raised);
+      backdrop-filter: none;
+    }
+  }
+}
+
 /* One backing plate follows the selected RAC tab. The selected background is
  * also a CSS fallback if a browser cannot measure the sliding geometry. */
 [data-mf-premium][data-mf-surface="precision"] .mf-tabs__list {

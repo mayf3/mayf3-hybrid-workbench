@@ -19,6 +19,8 @@ pnpm dev
 
 任务进度、验收通过率和交付完成率分别标注。可从 Agent C 的任务打开失败事件，查看工具调用，再尝试批准基线与重试校验。操作运行在页面内存中的模拟数据上，刷新会重置。
 
+[Reference Study](docs/reference-study/IMPLEMENTATION.md) 可以用同一个工作台切换 Vercel、Stripe、Apple 和 Mayf3 Hybrid 四种视觉方向。
+
 ## 源码与验证
 
 - [Hybrid UI](workbench/stories/premium-agent/) 包含工作区、Agent 组件和主题样式。

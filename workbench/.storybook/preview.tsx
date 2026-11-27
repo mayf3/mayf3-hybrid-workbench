@@ -8,6 +8,8 @@ import "@mayf3/ui-react/styles.css";
 import "./preview.css";
 
 const preview: Preview = {
+  // Keep the interactive panel available without racing Playwright's axe run.
+  initialGlobals: { a11y: { manual: true } },
   globalTypes: {
     theme: {
       description: "Color scheme axis (data-theme)",
