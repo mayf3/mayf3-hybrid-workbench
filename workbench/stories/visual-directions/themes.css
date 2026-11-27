@@ -1,0 +1,372 @@
+/* Storybook-only token boundary. Foundation and Seaside keep their original
+   declarations. React Aria overlays inherit these same values in this root. */
+[data-sky-theme] {
+  color-scheme: light;
+  --sky-sans: "Avenir Next", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --sky-serif: Georgia, "Songti SC", "Noto Serif CJK SC", SimSun, serif;
+  --sky-humanist: Optima, "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --sky-rounded: "Trebuchet MS", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+  --sky-technical: ui-monospace, "SF Mono", "PingFang SC", "Microsoft YaHei", monospace;
+  --sky-display-font: var(--sky-sans);
+  --sky-display-weight: 730;
+  --sky-display-spacing: -0.03em;
+  --sky-metric-number-font: var(--sky-display-font);
+  --sky-metric-number-spacing: -0.035em;
+
+  --mf-font-body: var(--sky-sans);
+  --mf-font-heading: var(--sky-display-font);
+  --mf-color-surface-default: light-dark(#ffffff, #172943);
+  --mf-color-surface-raised: light-dark(#ffffff, #1b304d);
+  --mf-color-surface-sunken: light-dark(#e8f0fa, #102139);
+  --mf-color-surface-soft: light-dark(#f2f7fe, #1a304c);
+  --mf-color-surface-tint: var(--sky-ice);
+  --mf-color-surface-highlight: var(--sky-secondary-surface);
+  --mf-color-text-primary: light-dark(#142b49, #f0f6ff);
+  --mf-color-text-secondary: light-dark(#405976, #bfcee3);
+  --mf-color-text-muted: light-dark(#526b86, #a5b9d4);
+  --mf-color-text-inverse: var(--mf-color-text-on-accent);
+  --mf-color-text-on-accent: light-dark(#ffffff, #102039);
+  --mf-color-accent-soft: var(--sky-ice);
+  --mf-color-accent-expressive: var(--mf-color-accent-default);
+  --mf-color-accent-expressive-hover: var(--mf-color-accent-hover);
+  --mf-color-accent-warm: var(--sky-accent-warm);
+  --mf-color-accent-lilac: var(--sky-accent-lavender);
+  --mf-color-border-subtle: light-dark(#d4e1f0, #334d6c);
+  --mf-color-border-default: light-dark(#778ba4, #7790ad);
+  --mf-color-control-highlight: light-dark(rgb(255 255 255 / 0.24), rgb(255 255 255 / 0.32));
+  --mf-color-status-success: light-dark(#21654b, #95e1b6);
+  --mf-color-status-success-soft: light-dark(#e3f5ee, #183a32);
+  --mf-color-status-warning: light-dark(#795015, #ffd095);
+  --mf-color-status-warning-soft: light-dark(#fff1d7, #41311f);
+  --mf-color-status-danger: light-dark(#a13b48, #ffa8b4);
+  --mf-color-status-danger-soft: light-dark(#fff0f2, #462436);
+  --mf-color-status-info: light-dark(#225c99, #b6d6ff);
+  --mf-color-status-info-soft: light-dark(#e6f0ff, #20395b);
+  --mf-color-status-neutral: light-dark(#4e637c, #c2d0e4);
+  --mf-color-status-neutral-soft: light-dark(#eef3f8, #293e5a);
+  --mf-color-scrim: light-dark(rgb(20 45 79 / 0.39), rgb(2 10 26 / 0.68));
+  --sky-accent-cyan: light-dark(#167da1, #82d8e9);
+  --sky-accent-lavender: light-dark(#6c539b, #c6b6f7);
+  --sky-accent-warm: light-dark(#98532d, #fac29d);
+  --sky-focus: var(--mf-color-accent-default);
+  --mf-focus-ring: 0 0 0 var(--mf-border-weight-strong) var(--mf-color-surface-raised),
+    0 0 0 var(--mf-space-1) var(--sky-focus);
+
+  --sky-shadow-ink: light-dark(rgb(34 90 145 / 0.09), rgb(1 11 28 / 0.41));
+  --mf-shadow-soft: 0 2px 5px var(--sky-shadow-ink);
+  --mf-shadow-floating: 0 12px 32px var(--sky-shadow-ink), 0 3px 8px var(--sky-shadow-ink);
+  --mf-shadow-overlay: 0 25px 80px var(--sky-shadow-ink), 0 6px 18px var(--sky-shadow-ink);
+  --mf-shadow-card: var(--sky-panel-shadow);
+  --sky-panel-shadow: 0 1px 2px var(--sky-shadow-ink), 0 8px 22px var(--sky-shadow-ink);
+  --sky-panel-hover-shadow: 0 2px 4px var(--sky-shadow-ink), 0 12px 30px var(--sky-shadow-ink);
+  --sky-feature-shadow: var(--sky-panel-shadow);
+  --sky-primary-shadow: inset 0 1px 0 var(--mf-color-control-highlight), var(--mf-shadow-soft);
+  --sky-primary-sheen: none;
+
+  --sky-control-radius: 10px;
+  --sky-panel-radius: 18px;
+  --sky-feature-radius: 24px;
+  --sky-nav-radius: var(--sky-control-radius);
+  --sky-badge-radius: var(--mf-radius-pill);
+  --mf-radius: var(--sky-control-radius);
+  --mf-radius-control: var(--sky-control-radius);
+  --mf-radius-panel: var(--sky-panel-radius);
+  --mf-radius-feature: var(--sky-feature-radius);
+  --mf-radius-md: var(--sky-badge-radius);
+  --mf-panel-radius: var(--sky-panel-radius);
+  --sky-section-rule: none;
+  --sky-metric-rule: none;
+  --sky-feature-rule: none;
+
+  --sky-canvas-background: var(--mf-color-surface-canvas);
+  --sky-nav-background: var(--mf-color-surface-default);
+  --sky-nav-selected: var(--sky-ice);
+  --sky-nav-selected-mark: var(--mf-color-accent-default);
+  --sky-panel-background: var(--mf-color-surface-default);
+  --sky-metric-background: var(--sky-panel-background);
+  --sky-metric-mark: var(--mf-color-accent-default);
+  --sky-table-row: var(--sky-panel-background);
+  --sky-feature-edge: color-mix(in srgb, var(--mf-color-accent-default) 23%, var(--mf-color-border-subtle));
+  --sky-feature-art: none;
+  --sky-feature-wire: color-mix(in srgb, var(--mf-color-accent-default) 51%, transparent);
+  --sky-feature-node: var(--mf-color-surface-default);
+  --sky-orbit-aspect: 2.05;
+  --sky-orbit-radius: 50%;
+  --sky-orbit-tilt: -23deg;
+  --sky-orbit-middle-tilt: var(--sky-orbit-tilt);
+  --sky-orbit-inner-tilt: var(--sky-orbit-tilt);
+  --sky-orbit-line: solid;
+  --sky-orbit-outer-line: var(--sky-orbit-line);
+  --sky-hub-tilt: -7deg;
+
+  --mf-duration-fast: 120ms;
+  --mf-duration-normal: 180ms;
+  --mf-ease: cubic-bezier(0.2, 0.65, 0.3, 1);
+  --mf-motion-spring: var(--mf-ease);
+  --mf-density-gap: var(--mf-space-4);
+  --mf-density-control-height: var(--mf-control-height-md);
+
+  box-sizing: border-box;
+  color: var(--mf-color-text-primary);
+  font-family: var(--mf-font-body);
+  line-height: var(--mf-line-height-normal);
+}
+
+[data-sky-theme][data-theme="dark"] {
+  color-scheme: dark;
+}
+
+/* Density and visual direction can vary independently. */
+[data-sky-theme][data-density="compact"] {
+  --mf-density-gap: var(--mf-space-2);
+  --mf-density-control-height: var(--mf-control-height-sm);
+}
+
+[data-sky-theme][data-density="spacious"] {
+  --mf-density-gap: var(--mf-space-6);
+  --mf-density-control-height: var(--mf-control-height-lg);
+}
+
+[data-sky-theme] :where(*, *::before, *::after) {
+  box-sizing: inherit;
+}
+
+/* Sky Air: a bright horizon, specular edges and feathered depth. */
+[data-sky-theme="air"] {
+  --mf-color-surface-canvas: light-dark(#eef7ff, #10213a);
+  --mf-color-accent-default: light-dark(#0b5fba, #8ccaff);
+  --mf-color-accent-hover: light-dark(#064f9f, #b3dcff);
+  --sky-ice: light-dark(#e4f3ff, #213f64);
+  --sky-secondary-surface: light-dark(#d0f1ff, #173b50);
+  --sky-nav-background: light-dark(#f9fcff, #12243f);
+  --sky-feature-background: linear-gradient(122deg, var(--mf-color-surface-default) 9%, var(--sky-ice) 60%, var(--sky-secondary-surface));
+  --sky-feature-art: radial-gradient(ellipse at 50% 42%, var(--mf-color-surface-raised), transparent 64%);
+  --sky-metric-background: linear-gradient(163deg, var(--mf-color-surface-default) 49%, var(--sky-ice));
+  --sky-primary-highlight: light-dark(#156ec8, #aadcff);
+  --sky-primary-sheen: linear-gradient(var(--sky-primary-highlight), transparent);
+}
+
+/* Sky Editorial: typeset hierarchy, thin book rules and flat white stock. */
+[data-sky-theme="editorial"] {
+  --mf-color-surface-canvas: light-dark(#f4f7fb, #141e32);
+  --mf-color-surface-default: light-dark(#fffefe, #1b2940);
+  --mf-color-surface-raised: light-dark(#ffffff, #23324d);
+  --mf-color-surface-soft: light-dark(#edf2fb, #1e314c);
+  --mf-color-accent-default: light-dark(#1e56a3, #9bc3fa);
+  --mf-color-accent-hover: light-dark(#174684, #bbd6fc);
+  --sky-ice: light-dark(#edf3ff, #273b5a);
+  --sky-secondary-surface: light-dark(#dceaff, #253047);
+  --sky-display-font: var(--sky-serif);
+  --sky-display-weight: 650;
+  --sky-display-spacing: -0.018em;
+  --sky-metric-number-spacing: -0.045em;
+  --sky-control-radius: 4px;
+  --sky-panel-radius: 6px;
+  --sky-feature-radius: 6px;
+  --sky-nav-radius: var(--sky-control-radius);
+  --sky-badge-radius: var(--mf-radius-sm);
+  --sky-panel-shadow: none;
+  --sky-primary-shadow: none;
+  --sky-nav-background: var(--mf-color-surface-default);
+  --sky-section-rule: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+  --sky-metric-rule: var(--mf-border-weight) solid var(--sky-nav-selected-mark);
+  --sky-feature-rule: var(--mf-border-weight-strong) solid var(--sky-nav-selected-mark);
+  --sky-feature-background: linear-gradient(105deg, var(--mf-color-surface-default) 53%, var(--sky-ice));
+  --sky-feature-wire: color-mix(in srgb, var(--mf-color-accent-default) 44%, transparent);
+  --sky-orbit-aspect: 2.85;
+  --sky-orbit-tilt: -7deg;
+  --sky-orbit-outer-line: dashed;
+  --sky-hub-tilt: 0deg;
+}
+
+/* Sky Aurora: ice and violet meet across a few satin surfaces. */
+[data-sky-theme="aurora"] {
+  --mf-color-surface-canvas: light-dark(#eff4ff, #151f3a);
+  --mf-color-surface-soft: light-dark(#f3f3ff, #222e52);
+  --mf-color-accent-default: light-dark(#1757bb, #9cbcff);
+  --mf-color-accent-hover: light-dark(#11499f, #baccff);
+  --sky-ice: light-dark(#e2f7fc, #183e51);
+  --sky-secondary-surface: light-dark(#e9e3ff, #302950);
+  --sky-shadow-ink: light-dark(rgb(55 59 135 / 0.11), rgb(4 7 32 / 0.45));
+  --sky-display-weight: 660;
+  --sky-display-spacing: -0.045em;
+  --sky-control-radius: 12px;
+  --sky-panel-radius: 20px;
+  --sky-feature-radius: 28px;
+  --sky-nav-background: linear-gradient(180deg, var(--mf-color-surface-default) 38%, var(--sky-secondary-surface));
+  --sky-nav-selected: linear-gradient(105deg, var(--sky-ice), var(--sky-secondary-surface));
+  --sky-metric-mark: var(--sky-accent-lavender);
+  --sky-metric-background: linear-gradient(150deg, var(--mf-color-surface-default) 45%, var(--sky-ice));
+  --sky-feature-background: linear-gradient(111deg, var(--sky-ice), var(--mf-color-surface-default) 46%, var(--sky-secondary-surface));
+  --sky-feature-art: radial-gradient(ellipse at 37% 82%, var(--sky-ice), transparent 68%);
+  --sky-feature-wire: color-mix(in srgb, var(--sky-accent-lavender) 61%, transparent);
+  --sky-feature-node: var(--sky-ice);
+  --sky-orbit-aspect: 1.9;
+  --sky-orbit-middle-tilt: -31deg;
+  --sky-orbit-inner-tilt: 17deg;
+  --sky-primary-highlight: light-dark(#2d57b7, #b5c4ff);
+  --sky-primary-sheen: linear-gradient(117deg, transparent, var(--sky-primary-highlight));
+}
+
+/* Sky Tech: ruled instruments, a measured grid and tabular readouts. */
+[data-sky-theme="tech"] {
+  --mf-color-surface-canvas: light-dark(#e9f1ff, #0d1b34);
+  --mf-color-surface-default: light-dark(#fafdff, #142641);
+  --mf-color-surface-raised: light-dark(#ffffff, #1b3052);
+  --mf-color-surface-soft: light-dark(#ebf2ff, #1b3154);
+  --mf-color-border-subtle: light-dark(#bccde5, #365479);
+  --mf-color-accent-default: light-dark(#154fc5, #8db7ff);
+  --mf-color-accent-hover: light-dark(#123fa4, #b0ceff);
+  --sky-ice: light-dark(#dce9ff, #203d68);
+  --sky-secondary-surface: light-dark(#e6f3ff, #20344f);
+  --sky-display-font: var(--sky-technical);
+  --sky-display-weight: 720;
+  --sky-display-spacing: -0.04em;
+  --sky-metric-number-font: var(--sky-technical);
+  --sky-metric-number-spacing: -0.065em;
+  --sky-control-radius: 4px;
+  --sky-panel-radius: 8px;
+  --sky-feature-radius: 8px;
+  --sky-nav-radius: 0;
+  --sky-badge-radius: 3px;
+  --sky-panel-shadow: 0 1px 0 var(--sky-shadow-ink);
+  --sky-primary-shadow: inset 0 1px 0 var(--mf-color-control-highlight);
+  --sky-nav-background: var(--mf-color-surface-soft);
+  --sky-section-rule: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+  --sky-metric-rule: var(--mf-border-weight-strong) solid var(--sky-metric-mark);
+  --sky-feature-rule: var(--mf-border-weight-strong) solid var(--sky-nav-selected-mark);
+  --sky-metric-background: linear-gradient(180deg, var(--mf-color-surface-default) 65%, var(--sky-secondary-surface));
+  --sky-table-row: var(--mf-color-surface-soft);
+  --sky-feature-background: linear-gradient(110deg, var(--mf-color-surface-default) 33%, var(--sky-ice));
+  --sky-grid-ink: color-mix(in srgb, var(--mf-color-accent-default) 22%, transparent);
+  --sky-feature-art:
+    repeating-linear-gradient(0deg, var(--sky-grid-ink) 0 var(--mf-border-weight), transparent var(--mf-border-weight) var(--mf-space-4)),
+    repeating-linear-gradient(90deg, var(--sky-grid-ink) 0 var(--mf-border-weight), transparent var(--mf-border-weight) var(--mf-space-4));
+  --sky-feature-wire: color-mix(in srgb, var(--mf-color-accent-default) 76%, transparent);
+  --sky-orbit-aspect: 1.68;
+  --sky-orbit-radius: var(--sky-panel-radius);
+  --sky-orbit-tilt: 0deg;
+  --sky-orbit-outer-line: dashed;
+  --sky-hub-tilt: 0deg;
+}
+
+/* Sky Warm: bright blue essentials with a warm paper edge and amber details. */
+[data-sky-theme="warm"] {
+  --mf-color-surface-canvas: light-dark(#f8f5f0, #1d2333);
+  --mf-color-surface-default: light-dark(#fffdf8, #252e42);
+  --mf-color-surface-raised: light-dark(#ffffff, #2b354a);
+  --mf-color-surface-soft: light-dark(#f7f3eb, #2f3447);
+  --mf-color-accent-default: light-dark(#1366ae, #89c6fa);
+  --mf-color-accent-hover: light-dark(#0e5596, #a9d7ff);
+  --mf-color-border-subtle: light-dark(#dfd9cf, #4b4a5b);
+  --sky-ice: light-dark(#e7f3ff, #284365);
+  --sky-secondary-surface: light-dark(#f9e9d9, #48363c);
+  --sky-shadow-ink: light-dark(rgb(112 75 48 / 0.08), rgb(13 10 22 / 0.38));
+  --sky-display-font: var(--sky-humanist);
+  --sky-display-weight: 700;
+  --sky-display-spacing: -0.024em;
+  --sky-control-radius: 12px;
+  --sky-panel-radius: 16px;
+  --sky-feature-radius: 18px;
+  --sky-nav-background: var(--mf-color-surface-default);
+  --sky-feature-edge: var(--mf-color-border-subtle);
+  --sky-feature-background: linear-gradient(125deg, var(--sky-ice) 5%, var(--mf-color-surface-default) 59%, var(--sky-secondary-surface));
+  --sky-feature-art: radial-gradient(ellipse at 65% 36%, var(--sky-secondary-surface), transparent 68%);
+  --sky-feature-wire: color-mix(in srgb, var(--mf-color-accent-default) 54%, transparent);
+  --sky-orbit-aspect: 2.35;
+  --sky-orbit-radius: var(--mf-radius-pill);
+  --sky-orbit-tilt: -13deg;
+  --sky-metric-background: linear-gradient(151deg, var(--mf-color-surface-default) 68%, var(--sky-secondary-surface));
+  --sky-metric-mark: var(--sky-accent-warm);
+  --sky-table-row: var(--mf-color-surface-soft);
+}
+
+/* Sky Bloom: capsule controls, soft purple emphasis and asymmetrical curves. */
+[data-sky-theme="bloom"] {
+  --mf-color-surface-canvas: light-dark(#f1f3ff, #191f3e);
+  --mf-color-surface-soft: light-dark(#f0eeff, #272e54);
+  --mf-color-accent-default: light-dark(#3658bc, #a5baff);
+  --mf-color-accent-hover: light-dark(#2c49a3, #c4ceff);
+  --sky-ice: light-dark(#e3ebff, #283b65);
+  --sky-secondary-surface: light-dark(#f1e5fb, #3b2d58);
+  --sky-shadow-ink: light-dark(rgb(76 63 133 / 0.11), rgb(6 9 35 / 0.44));
+  --sky-display-font: var(--sky-rounded);
+  --sky-display-weight: 740;
+  --sky-display-spacing: -0.04em;
+  --sky-control-radius: var(--mf-radius-pill);
+  --sky-panel-radius: 22px;
+  --sky-feature-radius: 32px 32px 28px 28px;
+  --sky-metric-background: linear-gradient(149deg, var(--mf-color-surface-default) 48%, var(--sky-secondary-surface));
+  --sky-metric-mark: var(--sky-accent-lavender);
+  --sky-nav-background: light-dark(#faf9ff, #20284a);
+  --sky-nav-selected: var(--sky-ice);
+  --sky-feature-background: linear-gradient(117deg, var(--sky-ice) 5%, var(--mf-color-surface-default) 57%, var(--sky-secondary-surface));
+  --sky-feature-art: radial-gradient(ellipse at 55% 32%, var(--sky-secondary-surface), transparent 68%);
+  --sky-feature-wire: color-mix(in srgb, var(--sky-accent-lavender) 63%, transparent);
+  --sky-feature-node: var(--sky-secondary-surface);
+  --sky-orbit-aspect: 1.75;
+  --sky-orbit-tilt: -34deg;
+  --sky-orbit-middle-tilt: 27deg;
+  --sky-orbit-inner-tilt: -57deg;
+  --sky-hub-tilt: 0deg;
+  --sky-primary-highlight: light-dark(#3d5fc0, #c1caff);
+  --sky-primary-sheen: linear-gradient(135deg, var(--sky-primary-highlight), transparent);
+}
+
+/* The same contour elements use each direction's geometry. */
+[data-sky-theme] .sky-orbit {
+  --sky-orbit-angle: var(--sky-orbit-tilt);
+  aspect-ratio: var(--sky-orbit-aspect);
+  border-style: var(--sky-orbit-line);
+  border-radius: var(--sky-orbit-radius);
+  transform: translate(-50%, -50%) rotate(var(--sky-orbit-angle));
+}
+
+[data-sky-theme] .sky-orbit--outer { border-style: var(--sky-orbit-outer-line); }
+[data-sky-theme] .sky-orbit--middle { --sky-orbit-angle: var(--sky-orbit-middle-tilt); }
+[data-sky-theme] .sky-orbit--inner { --sky-orbit-angle: var(--sky-orbit-inner-tilt); }
+[data-sky-theme] .sky-feature-hub { rotate: var(--sky-hub-tilt); }
+
+/* Keep the sheen on hover so the adapter can transition the color beneath
+   it. The adapter also owns disabled/loading state and pointer handling. */
+[data-sky-theme] .mf-btn--primary:not(:is([data-disabled], :disabled)) {
+  background-image: var(--sky-primary-sheen);
+}
+
+[data-sky-theme] .mf-btn--primary:not(:is(:focus-visible, [data-disabled], :disabled)) {
+  box-shadow: var(--sky-primary-shadow);
+}
+
+[data-sky-theme] .mf-switch[data-focus-visible],
+[data-sky-theme] .mf-tabs__panel:focus-visible {
+  outline: var(--mf-border-weight-strong) solid var(--sky-focus);
+  outline-offset: var(--mf-border-weight-strong);
+  border-radius: var(--sky-control-radius);
+}
+
+/* The tab list scrolls inline on narrow screens. Keep its indicators inside
+   the scrollport so keyboard focus and selection are fully visible. */
+[data-sky-theme] .mf-tabs__tab:focus-visible {
+  outline-offset: calc(-1 * var(--mf-border-weight-strong));
+}
+
+[data-sky-theme] .mf-tabs__tab[data-selected]::after {
+  inset-block-end: 0;
+}
+
+[data-sky-theme] .mf-tabs__panel:not([inert], [hidden]) {
+  animation: sky-tab-in var(--mf-duration-fast) var(--mf-ease);
+}
+
+@keyframes sky-tab-in {
+  from { opacity: 0.88; }
+  to { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-sky-theme] :where(*, *::before, *::after) {
+    animation: none !important;
+    transition: none !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,377 @@
+/* Layout additions are opt-in for this comparison. The six direction stories
+   render Workspace without a layout attribute. */
+
+[data-precision-layout] .sky-run-status {
+  position: relative;
+  min-inline-size: 0;
+  border: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+  border-radius: var(--mf-panel-radius);
+  background: var(--mf-color-surface-raised);
+}
+
+[data-precision-layout] .sky-run-status > div {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  column-gap: var(--mf-space-3);
+  row-gap: var(--mf-space-2);
+  min-inline-size: 0;
+  padding: var(--mf-space-3) var(--mf-space-4);
+}
+
+[data-precision-layout] .sky-run-icon {
+  display: grid;
+  inline-size: var(--mf-space-8);
+  block-size: var(--mf-space-8);
+  place-items: center;
+  border-radius: var(--mf-radius-control);
+  background: var(--mf-color-status-info-soft);
+  color: var(--mf-color-status-info);
+}
+
+[data-precision-layout] .sky-run-icon svg {
+  inline-size: var(--mf-space-4);
+  block-size: var(--mf-space-4);
+}
+
+[data-precision-layout] .sky-run-review .sky-run-icon {
+  background: var(--mf-color-status-warning-soft);
+  color: var(--mf-color-status-warning);
+}
+
+[data-precision-layout] .sky-run-copy h3 {
+  margin: 0;
+  color: var(--mf-color-text-secondary);
+  font-size: var(--mf-font-size-xs);
+  font-weight: 600;
+  line-height: var(--mf-line-height-tight);
+}
+
+[data-precision-layout] .sky-run-review h3 { color: var(--mf-color-status-warning); }
+
+[data-precision-layout] .sky-run-copy p {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  column-gap: var(--mf-space-2);
+  margin: var(--mf-space-1) 0 0;
+  color: var(--mf-color-text-secondary);
+  font-size: var(--mf-font-size-xs);
+  line-height: var(--mf-line-height-tight);
+  overflow-wrap: anywhere;
+}
+
+[data-precision-layout] .sky-run-copy strong {
+  color: var(--mf-color-text-primary);
+  font-size: var(--mf-font-size-sm);
+  font-weight: 620;
+}
+
+[data-precision-layout] .sky-run-number {
+  color: var(--mf-color-text-primary);
+  font-size: var(--mf-font-size-lg);
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+[data-precision-layout] .sky-run-meter { grid-column: 2 / -1; }
+
+[data-precision-layout="before"] .sky-feature {
+  gap: var(--mf-space-5);
+}
+
+[data-precision-layout="before"] .sky-feature-visual {
+  block-size: 72%;
+}
+
+[data-precision-layout="before"] .sky-run-status {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+[data-precision-layout="before"] .sky-run-status > div + div {
+  border-inline-start: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+}
+
+/* The operational summary is the only focal surface. It gets a static
+   directional light, while ordinary data and navigation use edge/depth roles. */
+[data-precision-layout="after"] {
+  --precision-title-page: clamp(var(--mf-font-size-2xl), 2.7cqi, 2.625rem);
+  --precision-title-focal: clamp(var(--mf-font-size-2xl), 3cqi, 3rem);
+  --precision-title-tracking: -0.018em;
+  --precision-title-heading-line: 1.2;
+  --precision-copy-measure: 40ch;
+  --precision-display-weight: 650;
+  --precision-heading-weight: 620;
+  --precision-data-font: var(--mf-font-mono);
+  --precision-numeric-font: var(--mf-font-body);
+  --precision-section-gap: var(--mf-space-6);
+  --precision-sidebar-width: 11.5rem;
+  --sky-sidebar-width: var(--precision-sidebar-width);
+  background: var(--mf-surface-canvas);
+}
+
+[data-precision-layout="after"] .sky-top-nav {
+  background: var(--mf-surface-raised);
+  border-block-end-color: var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-sidebar {
+  background: var(--mf-surface-default);
+  border-inline-end-color: var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-brand { font-weight: var(--precision-display-weight); }
+
+[data-precision-layout="after"] .sky-brand-mark {
+  border: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  background: var(--mf-surface-tint);
+  color: var(--mf-color-accent-default);
+}
+
+[data-precision-layout="after"] .sky-sidebar a[aria-current] {
+  background: var(--mf-surface-tint);
+  font-weight: var(--precision-display-weight);
+}
+
+[data-precision-layout="after"] .sky-main { gap: var(--precision-section-gap); }
+
+[data-precision-layout="after"] .sky-display {
+  font-size: var(--precision-title-page);
+  font-weight: var(--precision-display-weight);
+  letter-spacing: var(--precision-title-tracking);
+  line-height: var(--precision-title-heading-line);
+}
+
+[data-precision-layout="after"] .sky-page-head p {
+  font-size: var(--mf-font-size-sm);
+  line-height: var(--mf-line-height-normal);
+}
+
+[data-precision-layout="after"] .sky-feature {
+  grid-template-columns: minmax(0, 0.92fr) minmax(0, 1.08fr);
+  gap: var(--mf-space-6);
+  min-block-size: 0;
+  align-items: center;
+  border: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  border-radius: var(--mf-radius-feature);
+  background-color: var(--mf-surface-tint);
+  background-image: var(--mf-surface-focal-light);
+  box-shadow: var(--mf-elevation-1);
+}
+
+[data-precision-layout="after"] .sky-feature h2 {
+  font-size: var(--precision-title-focal);
+  text-wrap: balance;
+}
+
+[data-precision-layout="after"] .sky-feature-copy p {
+  max-inline-size: var(--precision-copy-measure);
+  text-wrap: pretty;
+  margin-block-end: var(--mf-space-5);
+}
+
+[data-precision-layout="after"] .sky-feature-label {
+  color: var(--mf-color-text-secondary);
+  font-weight: var(--precision-heading-weight);
+}
+
+[data-precision-layout="after"] .sky-run-status {
+  background: var(--mf-surface-raised);
+  border-color: var(--mf-edge-subtle);
+  box-shadow: var(--mf-elevation-2);
+}
+
+[data-precision-layout="after"] .sky-run-status > div + div {
+  border-block-start: var(--mf-border-weight) solid var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-run-status > .sky-run-active {
+  padding-block: var(--mf-space-4);
+}
+
+[data-precision-layout="after"] .sky-run-active .sky-run-number {
+  font-size: var(--mf-font-size-2xl);
+  letter-spacing: var(--precision-title-tracking);
+}
+
+[data-precision-layout="after"] .sky-run-copy bdi,
+[data-precision-layout="after"] .sky-timeline time {
+  font-family: var(--precision-data-font);
+  font-variant-numeric: tabular-nums;
+}
+
+[data-precision-layout="after"] .sky-metrics {
+  gap: 0;
+  border: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  border-radius: var(--mf-radius-panel);
+  background: var(--mf-surface-default);
+  box-shadow: var(--mf-elevation-1);
+}
+
+[data-precision-layout="after"] .sky-metric,
+[data-precision-layout="after"] .sky-metric:hover {
+  gap: var(--mf-space-1);
+  padding: var(--mf-space-4) var(--mf-space-5);
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: var(--mf-elevation-0);
+}
+
+[data-precision-layout="after"] .sky-metric + .sky-metric,
+[data-precision-layout="after"] .sky-metric + .sky-metric:hover {
+  border-inline-start: var(--mf-border-weight) solid var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-metric-icon {
+  inline-size: var(--mf-space-6);
+  block-size: var(--mf-space-6);
+  background: transparent;
+}
+
+[data-precision-layout="after"] .sky-metric-icon svg {
+  inline-size: var(--mf-space-4);
+  block-size: var(--mf-space-4);
+}
+
+[data-precision-layout="after"] .sky-metric-head h2 {
+  color: var(--mf-color-text-secondary);
+  font-weight: var(--precision-heading-weight);
+}
+
+[data-precision-layout="after"] .sky-metric-value {
+  font-family: var(--precision-numeric-font);
+  font-size: clamp(var(--mf-font-size-xl), 2.6cqi, 2.125rem);
+  font-weight: var(--precision-display-weight);
+  letter-spacing: var(--precision-title-tracking);
+}
+
+[data-precision-layout="after"] .sky-data-grid {
+  gap: 0;
+  align-items: stretch;
+  border: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  border-radius: var(--mf-radius-panel);
+  background: var(--mf-surface-default);
+  box-shadow: var(--mf-elevation-1);
+}
+
+[data-precision-layout="after"] .sky-data-grid .sky-panel {
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: var(--mf-elevation-0);
+}
+
+[data-precision-layout="after"] .sky-data-grid .sky-timeline {
+  border-inline-start: var(--mf-border-weight) solid var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-panel-head h2,
+[data-precision-layout="after"] .sky-preview-section > h2 {
+  font-weight: var(--precision-heading-weight);
+  letter-spacing: var(--precision-title-tracking);
+}
+
+[data-precision-layout="after"] .mf-tabs__panel { padding-block-start: var(--mf-space-2); }
+
+[data-precision-layout="after"] .sky-table th {
+  padding-block: var(--mf-space-2);
+  border-block-end-color: var(--mf-edge-subtle);
+  font-weight: 510;
+}
+
+[data-precision-layout="after"] .sky-table td {
+  padding-block: var(--mf-space-3);
+  border-block-end-color: var(--mf-edge-subtle);
+}
+
+[data-precision-layout="after"] .sky-table tbody tr:last-child td { border-block-end: 0; }
+
+[data-precision-layout="after"] .sky-table tbody tr:nth-child(even):not(:hover) {
+  background: transparent;
+}
+
+[data-precision-layout="after"] .sky-table td strong,
+[data-precision-layout="after"] .sky-timeline li strong { font-weight: var(--precision-heading-weight); }
+
+[data-precision-layout="after"] .sky-table .sky-progress span {
+  font-family: var(--precision-data-font);
+  font-weight: var(--precision-heading-weight);
+}
+
+[data-precision-layout="after"] .sky-run-meter progress { block-size: var(--mf-space-1); }
+
+[data-precision-layout="after"] .sky-progress progress { background: var(--mf-surface-sunken); }
+[data-precision-layout="after"] .sky-progress progress::-webkit-progress-bar { background: var(--mf-surface-sunken); }
+
+[data-precision-layout="after"] .sky-empty {
+  border-radius: var(--mf-radius-control);
+  background: var(--mf-surface-sunken);
+}
+
+[data-precision-layout="after"] .sky-timeline li:not(:last-child)::after {
+  border-color: var(--mf-edge-subtle);
+}
+
+@container (max-width: 1040px) {
+  [data-precision-layout="after"] .sky-data-grid .sky-timeline {
+    border-inline-start: 0;
+    border-block-start: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  }
+}
+
+@container (max-width: 960px) {
+  [data-precision-layout="before"] .sky-run-status { grid-template-columns: minmax(0, 1fr); }
+  [data-precision-layout="before"] .sky-run-status > div + div {
+    border-inline-start: 0;
+    border-block-start: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+  }
+  [data-precision-layout="before"] .sky-feature-visual {
+    block-size: 54%;
+    inline-size: 43%;
+  }
+}
+
+@container (max-width: 840px) {
+  [data-precision-layout="after"] { --precision-section-gap: var(--mf-space-4); }
+  [data-precision-layout="after"] .sky-shell { grid-template-columns: minmax(0, 1fr); }
+  [data-precision-layout="after"] .sky-sidebar {
+    border-inline-end: 0;
+    border-block-end: var(--mf-border-weight) solid var(--mf-edge-subtle);
+  }
+  [data-precision-layout="after"] .sky-workspace-id { margin-block-end: var(--mf-space-2); }
+  [data-precision-layout="after"] .sky-sidebar nav { display: flex; flex-wrap: wrap; }
+}
+
+@container (max-width: 660px) {
+  [data-precision-layout="before"] .sky-feature {
+    gap: var(--mf-space-4);
+  }
+  [data-precision-layout="before"] .sky-feature-visual {
+    block-size: 48%;
+  }
+  [data-precision-layout="after"] .sky-feature {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--mf-space-4);
+  }
+}
+
+@container (max-width: 470px) {
+  [data-precision-layout] .sky-run-status > div {
+    column-gap: var(--mf-space-2);
+    padding-inline: var(--mf-space-3);
+  }
+  [data-precision-layout="before"] .sky-feature-visual {
+    opacity: 0.38;
+  }
+  [data-precision-layout="after"] .sky-feature { background-image: none; }
+  [data-precision-layout="after"] .sky-metric,
+  [data-precision-layout="after"] .sky-metric:hover {
+    padding-inline: var(--mf-space-2);
+  }
+  [data-precision-layout="after"] .sky-table th:first-child { inline-size: 50%; }
+  [data-precision-layout="after"] .sky-table td { padding-block: var(--mf-space-2); }
+}

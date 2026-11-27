@@ -1,0 +1,305 @@
+{
+  "schemaVersion": "mayf3-ui-registry-v1",
+  "status": "foundation-contract",
+  "note": "Entries describe intended reusable contracts. Do not treat an entry as implemented until its status is stable and it has a tested implementation.",
+  "components": [
+    {
+      "name": "Button",
+      "category": "action",
+      "status": "stable",
+      "api": {
+        "intent": [
+          "primary",
+          "secondary",
+          "quiet",
+          "danger"
+        ],
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "loading": "boolean",
+        "disabled": "isDisabled (React Aria)"
+      },
+      "a11y": [
+        "native button semantics",
+        "visible keyboard focus",
+        "disabled and loading (aria-busy) states",
+        "accessible name preserved while loading"
+      ]
+    },
+    {
+      "name": "TextField",
+      "category": "form",
+      "status": "stable",
+      "api": {
+        "label": "string (required)",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "state": [
+          "default",
+          "invalid",
+          "disabled",
+          "readOnly",
+          "required"
+        ],
+        "control": [
+          "value/defaultValue/onChange",
+          "inputRef"
+        ]
+      },
+      "a11y": [
+        "associated label",
+        "description and error relationship (aria-describedby)",
+        "aria-invalid with visible error text",
+        "keyboard focus"
+      ]
+    },
+    {
+      "name": "SelectField",
+      "category": "form",
+      "status": "stable",
+      "api": {
+        "label": "string (required)",
+        "items": "{ id, label }[]",
+        "control": [
+          "value/defaultValue/onChange (null clears)"
+        ],
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "state": [
+          "disabled",
+          "required",
+          "invalid",
+          "empty collection (emptyMessage)"
+        ]
+      },
+      "behavior": "React Aria Select/ListBox/Popover adapter",
+      "a11y": [
+        "keyboard selection (arrows, Enter, Escape, typeahead)",
+        "popover with trigger-width anchoring",
+        "focus restoration to trigger"
+      ]
+    },
+    {
+      "name": "Dialog",
+      "category": "overlay",
+      "status": "stable",
+      "api": {
+        "control": [
+          "isOpen/onOpenChange"
+        ],
+        "title": "string (required, aria-labelledby target)",
+        "size": [
+          "sm",
+          "md",
+          "lg"
+        ],
+        "isDismissable": "boolean (default true)"
+      },
+      "behavior": "React Aria Modal/ModalOverlay/Dialog adapter",
+      "a11y": [
+        "focus trap and restoration",
+        "Escape and overlay-press dismissal",
+        "scroll lock",
+        "reduced-motion aware entrance"
+      ]
+    },
+    {
+      "name": "Popover",
+      "category": "overlay",
+      "status": "planned",
+      "behavior": "approved accessible primitive adapter required"
+    },
+    {
+      "name": "Tooltip",
+      "category": "overlay",
+      "status": "planned",
+      "behavior": "approved accessible primitive adapter required"
+    },
+    {
+      "name": "Tabs",
+      "category": "navigation",
+      "status": "stable",
+      "api": {
+        "items": "{ id, label, content }[]",
+        "control": [
+          "selectedKey/defaultSelectedKey/onSelectionChange"
+        ],
+        "labelling": [
+          "aria-label",
+          "aria-labelledby"
+        ]
+      },
+      "behavior": "React Aria Tabs adapter",
+      "a11y": [
+        "tablist/tab/tabpanel semantics",
+        "arrow-key and Home/End navigation",
+        "panel association via id/aria-controls"
+      ]
+    },
+    {
+      "name": "Switch",
+      "category": "form",
+      "status": "stable",
+      "api": {
+        "children": "visible label (accessible name)",
+        "control": [
+          "isSelected/defaultSelected/onChange"
+        ],
+        "state": [
+          "disabled"
+        ]
+      },
+      "behavior": "React Aria Switch adapter",
+      "a11y": [
+        "native checkbox semantics with role=switch",
+        "state carried by checked property, not color alone",
+        "RTL-mirrored thumb"
+      ]
+    },
+    {
+      "name": "Toast",
+      "category": "feedback",
+      "status": "planned",
+      "api": {
+        "intent": [
+          "success",
+          "warning",
+          "danger",
+          "info"
+        ]
+      }
+    },
+    {
+      "name": "StatusBadge",
+      "category": "feedback",
+      "status": "stable",
+      "api": {
+        "intent": [
+          "success",
+          "info",
+          "warning",
+          "danger",
+          "neutral"
+        ],
+        "children": "status text (required)"
+      },
+      "a11y": [
+        "text label plus redundant visual dot",
+        "status token contrast in light and dark"
+      ]
+    }
+  ],
+  "patterns": [
+    {
+      "name": "AppShell",
+      "status": "planned",
+      "purpose": "product-level navigation and workspace frame"
+    },
+    {
+      "name": "PageHeader",
+      "status": "planned",
+      "purpose": "title, context, primary action and metadata hierarchy"
+    },
+    {
+      "name": "FilterBar",
+      "status": "planned",
+      "purpose": "search and structured filtering"
+    },
+    {
+      "name": "DataTable",
+      "status": "planned",
+      "purpose": "dense, accessible data presentation"
+    },
+    {
+      "name": "EmptyState",
+      "status": "planned",
+      "purpose": "explain absence and provide a next action"
+    },
+    {
+      "name": "SettingsSection",
+      "status": "planned",
+      "purpose": "group related preferences with clear save behavior"
+    },
+    {
+      "name": "AgentTaskRow",
+      "status": "preview",
+      "purpose": "Agent task lifecycle, owner, progress and intervention",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentApprovalCard",
+      "status": "preview",
+      "purpose": "Explicit impact, risk, owner and human approval",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentToolCall",
+      "status": "preview",
+      "purpose": "Tool input and outcome with failure recovery context",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentThinkingState",
+      "status": "preview",
+      "purpose": "Public work stage, task status and progress",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentActivityTimeline",
+      "status": "preview",
+      "purpose": "Ordered execution, waiting, failure, recovery and delivery",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentDiffTable",
+      "status": "preview",
+      "purpose": "Before and after records, scope and approval",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentDeliverySummary",
+      "status": "preview",
+      "purpose": "Outcome, checks, evidence, remaining risk and owner",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    },
+    {
+      "name": "AgentPromptBar",
+      "status": "preview",
+      "purpose": "Task intent, context, run mode and local draft",
+      "source": "workbench/stories/premium-agent/AgentComponents.tsx",
+      "contract": "docs/AGENT_PRODUCT_COMPONENTS.md"
+    }
+  ],
+  "implementation": {
+    "package": "@mayf3/ui-react",
+    "path": "packages/react",
+    "behaviorBase": "react-aria-components (>=1.12 <2)",
+    "status": "build-verified-and-browser-tested",
+    "verification": "docs/react-components-v1-acceptance.md",
+    "components": [
+      "Button",
+      "TextField",
+      "SelectField",
+      "Dialog",
+      "Tabs",
+      "Switch",
+      "StatusBadge"
+    ]
+  }
+}

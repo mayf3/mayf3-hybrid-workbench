@@ -1,0 +1,9 @@
+packages:
+  - packages/*
+  - workbench
+
+onlyBuiltDependencies:
+  - esbuild
+
+overrides:
+  "@storybook/react-vite>@joshwooding/vite-plugin-react-docgen-typescript": "0.9.1"

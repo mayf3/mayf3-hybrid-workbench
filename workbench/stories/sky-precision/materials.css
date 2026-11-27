@@ -1,0 +1,126 @@
+/* Optional Sky Precision palette. Both the canvas and React Aria portals
+   inherit this one boundary. Light values double as the old-engine fallback. */
+[data-sky-theme="air"][data-mf-surface="precision"] {
+  --mf-surface-canvas: #eef4fa;
+  --mf-surface-default: #f9fbfe;
+  --mf-surface-raised: #ffffff;
+  --mf-surface-sunken: #e8eff6;
+  --mf-surface-tint: #e1eefb;
+  --mf-surface-highlight: #edf7ff;
+  --mf-surface-glass: var(--mf-surface-raised);
+  --mf-surface-focal-light: none;
+  --mf-edge-highlight: rgb(255 255 255 / 0.88);
+  --mf-edge-subtle: #d1dfeb;
+  --mf-edge-strong: #7c8ea4;
+  --mf-shadow-contact-ink: rgb(25 47 67 / 0.19);
+  --mf-shadow-ambient-ink: rgb(45 65 88 / 0.11);
+  --mf-material-opacity: 0.96;
+  --mf-material-blur: 0px;
+  --mf-material-noise-opacity: 0;
+  --mf-material-reflection: radial-gradient(ellipse at 22% 0%, var(--mf-surface-highlight), transparent 74%);
+  --mf-control-primary-top: #216fbc;
+  --mf-control-primary-base: #0b5aa9;
+  --mf-control-primary-hover-top: #1a68b3;
+  --mf-control-primary-hover-base: #084e98;
+  --mf-control-primary-edge: #11569b;
+  --mf-control-primary-press-base: #074988;
+  --mf-color-control-highlight: rgb(255 255 255 / 0.32);
+
+  /* Resolve aliases here, where the optional palette lives. */
+  --mf-color-surface-canvas: var(--mf-surface-canvas);
+  --mf-color-surface-default: var(--mf-surface-default);
+  --mf-color-surface-raised: var(--mf-surface-raised);
+  --mf-color-surface-sunken: var(--mf-surface-sunken);
+  --mf-color-surface-soft: var(--mf-surface-highlight);
+  --mf-color-surface-tint: var(--mf-surface-tint);
+  --mf-color-surface-highlight: var(--mf-surface-highlight);
+  --mf-color-border-subtle: var(--mf-edge-subtle);
+  --mf-color-border-default: var(--mf-edge-strong);
+  --mf-color-accent-default: var(--mf-control-primary-base);
+  --mf-color-accent-hover: var(--mf-control-primary-hover-base);
+  --mf-color-accent-soft: var(--mf-surface-tint);
+  --mf-edge-light-top: inset 0 var(--mf-border-weight) 0 var(--mf-edge-highlight);
+  --mf-shadow-contact-sm: var(--mf-shadow-profile-contact-sm) var(--mf-shadow-contact-ink);
+  --mf-shadow-contact-md: var(--mf-shadow-profile-contact-md) var(--mf-shadow-contact-ink);
+  --mf-shadow-contact-lg: var(--mf-shadow-profile-contact-lg) var(--mf-shadow-contact-ink);
+  --mf-shadow-ambient-sm: var(--mf-shadow-profile-ambient-sm) var(--mf-shadow-ambient-ink);
+  --mf-shadow-ambient-md: var(--mf-shadow-profile-ambient-md) var(--mf-shadow-ambient-ink);
+  --mf-shadow-ambient-lg: var(--mf-shadow-profile-ambient-lg) var(--mf-shadow-ambient-ink);
+  --mf-elevation-1: var(--mf-edge-light-top), var(--mf-shadow-contact-sm), var(--mf-shadow-ambient-sm);
+  --mf-elevation-2: var(--mf-edge-light-top), var(--mf-shadow-contact-md), var(--mf-shadow-ambient-md);
+  --mf-elevation-3: var(--mf-edge-light-top), var(--mf-shadow-contact-lg), var(--mf-shadow-ambient-lg);
+  --mf-control-primary-paint: linear-gradient(180deg, var(--mf-control-primary-top), var(--mf-control-primary-base));
+  --mf-control-primary-hover-paint: linear-gradient(180deg, var(--mf-control-primary-hover-top), var(--mf-control-primary-hover-base));
+  --mf-control-light-top: inset 0 var(--mf-border-weight) 0 var(--mf-color-control-highlight);
+  --mf-control-shadow-rest: var(--mf-control-light-top), var(--mf-shadow-contact-sm);
+  --mf-control-shadow-hover: var(--mf-control-light-top), var(--mf-shadow-contact-sm), var(--mf-shadow-ambient-sm);
+  --mf-control-shadow-pressed: inset 0 var(--mf-border-weight-strong) var(--mf-border-weight-strong) var(--mf-shadow-contact-ink);
+  --mf-control-shadow-recessed: inset 0 var(--mf-border-weight) var(--mf-border-weight) var(--mf-shadow-ambient-ink);
+  --mf-control-focus-glow: 0 0 0 var(--mf-space-1) var(--mf-color-accent-soft);
+  --mf-control-focus-outline: var(--mf-border-weight-strong) solid var(--mf-color-accent-default);
+  --mf-control-switch-thumb: #7188a0;
+  --mf-control-switch-thumb-active: var(--mf-color-text-on-accent);
+
+  --sky-control-radius: 8px;
+  --sky-panel-radius: 14px;
+  --sky-feature-radius: 20px;
+  --sky-panel-background: var(--mf-surface-default);
+  --sky-panel-shadow: var(--mf-elevation-1);
+  --sky-panel-hover-shadow: var(--mf-elevation-1);
+  --sky-primary-shadow: var(--mf-control-shadow-rest);
+  --sky-primary-sheen: var(--mf-control-primary-paint);
+  --sky-nav-background: var(--mf-surface-default);
+  --sky-nav-selected: var(--mf-surface-tint);
+  --sky-canvas-background: var(--mf-surface-canvas);
+  --sky-metric-background: var(--mf-surface-default);
+  --mf-shadow-soft: var(--mf-shadow-contact-sm);
+  --mf-shadow-floating: var(--mf-elevation-2);
+  --mf-shadow-overlay: var(--mf-elevation-3);
+  --mf-duration-fast: var(--mf-motion-duration-fast);
+  --mf-duration-normal: var(--mf-motion-duration-normal);
+  --mf-duration-slow: var(--mf-motion-duration-slow);
+  --mf-ease: var(--mf-motion-ease-standard);
+  --mf-motion-spring: var(--mf-motion-ease-spring);
+}
+
+[data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
+  --mf-surface-canvas: #101b2a;
+  --mf-surface-default: #172638;
+  --mf-surface-raised: #213349;
+  --mf-surface-sunken: #142132;
+  --mf-surface-tint: #223d5c;
+  --mf-surface-highlight: #2b4764;
+  --mf-edge-highlight: rgb(208 230 251 / 0.18);
+  --mf-edge-subtle: #36516c;
+  --mf-edge-strong: #70849b;
+  --mf-shadow-contact-ink: rgb(3 11 23 / 0.52);
+  --mf-shadow-ambient-ink: rgb(2 8 18 / 0.29);
+  --mf-control-primary-top: #a8d7ff;
+  --mf-control-primary-base: #81b8ed;
+  --mf-control-primary-hover-top: #bce1ff;
+  --mf-control-primary-hover-base: #93c6f4;
+  --mf-control-primary-edge: #769fc9;
+  --mf-control-primary-press-base: #78b0e6;
+  --mf-color-control-highlight: rgb(255 255 255 / 0.42);
+}
+
+/* One local L2 light source. Use solid tint below tablet width. */
+@media (min-width: 768px) {
+  [data-sky-theme="air"][data-mf-surface="precision"] {
+    --mf-surface-focal-light: var(--mf-material-reflection);
+  }
+}
+
+/* This shallow anchored Popover is the only partly translucent surface.
+   Modal, select and toast bodies use the opaque raised face. */
+[data-sky-theme="air"][data-mf-surface="precision"] .sky-floating-panel[data-trigger="DialogTrigger"] {
+  background-color: var(--mf-surface-glass);
+}
+
+@supports (background-color: color-mix(in srgb, white, transparent)) {
+  @media (min-width: 768px) {
+    [data-sky-theme="air"][data-mf-surface="precision"] {
+      --mf-surface-glass: color-mix(in srgb, var(--mf-surface-raised) calc(var(--mf-material-opacity) * 100%), transparent);
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "name": "@mayf3/workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "storybook dev --host 127.0.0.1 -p 6006",
+    "build": "storybook build -o storybook-static",
+    "typecheck": "tsc --noEmit",
+    "test": "playwright test",
+    "test:visual": "playwright test e2e/visual",
+    "test:visual:update": "playwright test e2e/visual --update-snapshots",
+    "test:a11y": "playwright test e2e/a11y"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.11.0",
+    "@mayf3/ui-react": "workspace:*",
+    "@playwright/test": "^1.65.1",
+    "@storybook/addon-a11y": "^10.6.9",
+    "@storybook/addon-docs": "^10.6.9",
+    "@storybook/react-vite": "^10.6.9",
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "http-server": "^14.1.1",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-aria-components": "^1.9.0",
+    "storybook": "^10.6.9",
+    "typescript": "^5.9.0"
+  }
+}

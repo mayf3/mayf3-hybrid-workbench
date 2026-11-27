@@ -1,0 +1,10 @@
+__pycache__/
+.DS_Store
+verification/screenshots/
+node_modules/
+dist/
+workbench/.generated/
+workbench/storybook-static/
+workbench/test-results/
+workbench/playwright-report/
+*.tsbuildinfo

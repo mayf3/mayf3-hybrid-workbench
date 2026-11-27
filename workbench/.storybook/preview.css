@@ -1,0 +1,67 @@
+/* Workbench canvas: product-surface framing for stories. body.mf-canvas is set
+   by the decorator; the `body` qualifier keeps it ahead of Storybook's own
+   body.sb-show-main rules in the cascade. */
+body.mf-canvas {
+  min-height: 100vh;
+  padding: var(--mf-space-6);
+  box-sizing: border-box;
+}
+
+.mf-canvas {
+  background-color: var(--mf-color-surface-canvas);
+  color: var(--mf-color-text-primary);
+  font-family: var(--mf-font-body);
+  line-height: var(--mf-line-height-normal);
+  transition: background-color var(--mf-duration-normal) var(--mf-ease);
+}
+
+.mf-canvas > * {
+  margin-block: 0;
+}
+
+/* Demo section typography (workbench-only, not shipped). */
+.mf-demo-section {
+  display: grid;
+  gap: var(--mf-space-3);
+  max-inline-size: 860px;
+}
+
+.mf-demo-section + .mf-demo-section {
+  margin-block-start: var(--mf-space-8);
+}
+
+.mf-demo-title {
+  margin: 0;
+  font-family: var(--mf-font-heading);
+  font-size: var(--mf-font-size-lg);
+  font-weight: 600;
+  color: var(--mf-color-text-primary);
+}
+
+.mf-demo-label {
+  font-size: var(--mf-font-size-xs);
+  font-family: var(--mf-font-mono);
+  letter-spacing: 0.04em;
+  color: var(--mf-color-text-secondary);
+}
+
+.mf-demo-row {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--mf-space-3);
+}
+
+.mf-demo-grid {
+  display: grid;
+  gap: var(--mf-space-3);
+}
+
+/* Contrast sheet for floating components (select popover, dialog). */
+.mf-demo-panel {
+  background: var(--mf-color-surface-default);
+  border: var(--mf-border-weight) solid var(--mf-color-border-subtle);
+  border-radius: var(--mf-panel-radius);
+  box-shadow: var(--mf-shadow-card);
+  padding: var(--mf-space-5);
+}

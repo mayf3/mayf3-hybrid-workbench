@@ -1,0 +1,137 @@
+/* The three profiles share one brand scale and one structural contract. These
+   selectors also color RAC overlays portalled to the preview document body. */
+[data-mf-premium][data-sky-theme="air"][data-mf-surface="precision"] {
+  --mf-surface-canvas: var(--mf-premium-neutral-canvas);
+  --mf-surface-default: var(--mf-premium-neutral-surface);
+  --mf-surface-raised: var(--mf-premium-neutral-raised);
+  --mf-surface-sunken: var(--mf-premium-neutral-sunken);
+  --mf-surface-tint: var(--mf-blue-100);
+  --mf-surface-highlight: var(--mf-blue-50);
+  --mf-edge-subtle: var(--mf-premium-neutral-border-subtle);
+  --mf-edge-strong: var(--mf-premium-neutral-border-default);
+  --mf-color-text-primary: var(--mf-premium-neutral-text-primary);
+  --mf-color-text-secondary: var(--mf-premium-neutral-text-secondary);
+  --mf-color-text-muted: var(--mf-premium-neutral-text-muted);
+  --mf-color-text-on-accent: var(--mf-premium-neutral-raised);
+  --mf-control-primary-base: var(--mf-blue-700);
+  --mf-control-primary-top: color-mix(in srgb, var(--mf-blue-600) 48%, var(--mf-blue-700));
+  --mf-control-primary-hover-base: var(--mf-blue-800);
+  --mf-control-primary-hover-top: color-mix(in srgb, var(--mf-blue-600) 24%, var(--mf-blue-700));
+  --mf-control-primary-press-base: var(--mf-blue-800);
+  --mf-control-primary-edge: color-mix(in srgb, var(--mf-control-primary-base) 86%, var(--mf-blue-900));
+  --mf-control-focus-glow: 0 0 0 var(--mf-premium-focus-halo-width) var(--mf-color-accent-soft);
+  --mf-control-focus-offset: var(--mf-border-weight);
+  --mf-control-switch-thumb: var(--mf-edge-strong);
+  --mf-color-scrim: color-mix(in srgb, var(--mf-blue-900) 52%, transparent);
+  --mf-font-body: var(--mf-premium-font-sans);
+  --mf-font-mono: var(--mf-premium-font-mono);
+  --mf-radius: var(--mf-premium-radius-control);
+  --mf-radius-control: var(--mf-premium-radius-control);
+  --mf-radius-panel: var(--mf-premium-radius-panel);
+  --mf-panel-radius: var(--mf-premium-radius-panel);
+  --mf-premium-sidebar-background: var(--mf-surface-sunken);
+  --mf-premium-feature-background: linear-gradient(112deg, var(--mf-surface-default) 22%, var(--mf-surface-tint));
+  --mf-premium-field-edge: var(--mf-edge-strong);
+  --mf-premium-field-disabled: var(--mf-surface-sunken);
+  --mf-premium-field-readonly: var(--mf-surface-default);
+  --mf-premium-elevation-hairline: var(--mf-edge-light-top);
+  --mf-premium-elevation-button: var(--mf-control-light-top), var(--mf-shadow-contact-sm);
+  --mf-premium-elevation-card: var(--mf-elevation-1);
+  --mf-premium-elevation-raised: var(--mf-elevation-2);
+  --mf-premium-elevation-overlay: var(--mf-elevation-3);
+}
+
+[data-mf-premium][data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
+  --mf-premium-neutral-canvas: #101c2b;
+  --mf-premium-neutral-surface: #18283c;
+  --mf-premium-neutral-raised: #21354e;
+  --mf-premium-neutral-sunken: #132237;
+  --mf-premium-neutral-text-primary: #f0f6ff;
+  --mf-premium-neutral-text-secondary: #c1d2e4;
+  --mf-premium-neutral-text-muted: #a2b9d0;
+  --mf-premium-neutral-border-subtle: #36516d;
+  --mf-premium-neutral-border-default: #8196ae;
+  --mf-surface-tint: #28425f;
+  --mf-surface-highlight: #2b4562;
+  --mf-color-text-on-accent: #102640;
+  --mf-control-primary-base: var(--mf-blue-300);
+  --mf-control-primary-top: var(--mf-blue-200);
+  --mf-control-primary-hover-base: var(--mf-blue-200);
+  --mf-control-primary-hover-top: var(--mf-blue-100);
+  --mf-control-primary-press-base: color-mix(in srgb, var(--mf-blue-400) 38%, var(--mf-blue-300));
+  --mf-control-primary-edge: color-mix(in srgb, var(--mf-control-primary-base) 78%, var(--mf-blue-600));
+  --mf-color-scrim: #051120b5;
+}
+
+/* Untitled-inspired: softer windows, clear ink and stronger control relief. */
+[data-mf-premium="untitled"][data-mf-surface="precision"] {
+  --mf-premium-neutral-canvas: #e8f1fa;
+  --mf-premium-neutral-surface: #fafdff;
+  --mf-premium-neutral-sunken: #e5eef7;
+  --mf-premium-neutral-border-subtle: #d4e2ef;
+  --mf-premium-radius-chip: 7px;
+  --mf-premium-radius-control: 10px;
+  --mf-premium-radius-card: 14px;
+  --mf-premium-radius-panel: 18px;
+  --mf-premium-radius-window: 24px;
+  --mf-premium-type-display: 740 clamp(1.75rem, 3.05vw, 2.55rem) / 1.1 var(--mf-premium-font-sans);
+  --mf-premium-type-heading: 690 var(--mf-font-size-lg) / 1.32 var(--mf-premium-font-sans);
+  --mf-premium-type-numeric: 690 clamp(1.25rem, 2.1vw, 1.8rem) / 1.08 var(--mf-premium-font-sans);
+  --mf-premium-control-padding: var(--mf-space-4);
+  --mf-premium-control-padding-wide: var(--mf-space-5);
+  --mf-premium-focus-halo-width: var(--mf-space-1);
+}
+[data-mf-premium="untitled"][data-sky-theme="air"][data-mf-surface="precision"] {
+  --mf-premium-sidebar-background: var(--mf-surface-default);
+  --mf-premium-feature-background: linear-gradient(142deg, var(--mf-surface-raised) 6%, var(--mf-surface-default));
+  --mf-premium-elevation-button: var(--mf-control-light-top), var(--mf-shadow-contact-sm), var(--mf-shadow-ambient-sm);
+}
+[data-mf-premium="untitled"][data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
+  --mf-premium-neutral-canvas: #122135;
+  --mf-premium-neutral-surface: #1b2d42;
+  --mf-premium-neutral-raised: #253b55;
+}
+
+/* Beautiful-inspired: sharper edges, grouped work surfaces and compact type. */
+[data-mf-premium="beautiful"][data-mf-surface="precision"] {
+  --mf-premium-neutral-canvas: #e7eff7;
+  --mf-premium-neutral-surface: #f4f8fc;
+  --mf-premium-neutral-raised: #fbfdff;
+  --mf-premium-neutral-sunken: #e0ebf5;
+  --mf-premium-neutral-border-subtle: #c4d5e5;
+  --mf-premium-radius-chip: 4px;
+  --mf-premium-radius-control: 6px;
+  --mf-premium-radius-card: 8px;
+  --mf-premium-radius-panel: 10px;
+  --mf-premium-radius-window: 14px;
+  --mf-premium-type-display: 680 clamp(1.55rem, 2.62vw, 2.12rem) / 1.16 var(--mf-premium-font-sans);
+  --mf-premium-type-heading: 640 var(--mf-font-size-md) / 1.38 var(--mf-premium-font-sans);
+  --mf-premium-type-numeric: 620 clamp(1.2rem, 1.75vw, 1.52rem) / 1.12 var(--mf-premium-font-mono);
+  --mf-premium-tracking-display: -0.022em;
+  --mf-premium-focus-halo-width: var(--mf-border-weight-strong);
+}
+[data-mf-premium="beautiful"][data-sky-theme="air"][data-mf-surface="precision"] {
+  --mf-premium-feature-background: none;
+  --mf-premium-elevation-card: var(--mf-premium-elevation-hairline);
+  --mf-control-primary-top: color-mix(in srgb, var(--mf-control-primary-base) 85%, var(--mf-control-primary-hover-top));
+}
+[data-mf-premium="beautiful"][data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
+  --mf-premium-neutral-canvas: #0e1725;
+  --mf-premium-neutral-surface: #142236;
+  --mf-premium-neutral-raised: #1d3048;
+  --mf-premium-neutral-sunken: #101e30;
+}
+
+/* Density remains independent of theme profile and color scheme. */
+[data-mf-premium][data-density="comfortable"] {
+  --mf-density-gap: var(--mf-space-4);
+  --mf-density-control-height: var(--mf-control-height-md);
+  --mf-premium-row-block: var(--mf-space-3);
+  --mf-premium-section-gap: var(--mf-space-6);
+}
+[data-mf-premium][data-density="compact"] {
+  --mf-density-gap: var(--mf-space-3);
+  --mf-density-control-height: var(--mf-control-height-sm);
+  --mf-premium-row-block: var(--mf-space-2);
+  --mf-premium-section-gap: var(--mf-space-4);
+}
