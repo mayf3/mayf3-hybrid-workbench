@@ -41,6 +41,39 @@ function task(page: Page, name: string) {
   return page.getByRole("table", { name: "工作区任务" }).getByRole("row").filter({ hasText: name });
 }
 
+const regions = [
+  "intro", "metrics", "execution", "tools", "tasks", "approvals", "activity", "changes", "delivery", "prompt", "controls",
+] as const;
+type Region = (typeof regions)[number];
+const readingOrder = {
+  vercel: ["intro", "execution", "tasks", "activity", "tools", "approvals", "metrics", "delivery", "changes", "prompt", "controls"],
+  stripe: ["intro", "metrics", "tasks", "delivery", "execution", "approvals", "tools", "activity", "changes", "prompt", "controls"],
+  apple: ["intro", "execution", "approvals", "metrics", "tools", "activity", "tasks", "delivery", "changes", "prompt", "controls"],
+  hybrid: ["intro", "execution", "approvals", "metrics", "tasks", "activity", "tools", "delivery", "changes", "prompt", "controls"],
+} satisfies Record<Direction, readonly Region[]>;
+
+function composition(page: Page) {
+  return page.locator(".premium-workspace[data-reference-composition] .premium-content.reference-composition");
+}
+
+function slots(page: Page) {
+  return composition(page).locator(":scope > .reference-slot");
+}
+
+async function expectSingleWorkspace(page: Page, direction: Direction) {
+  await expect(page.locator(".premium-workspace")).toHaveAttribute("data-reference-composition", direction);
+  await expect(composition(page)).toHaveCount(1);
+  await expect(slots(page)).toHaveCount(regions.length);
+  const order = await slots(page).evaluateAll(items => items.map(item => item.getAttribute("data-region")));
+  expect(order).toEqual(readingOrder[direction]);
+}
+
+async function renderedBox(locator: Locator) {
+  const bounds = await locator.boundingBox();
+  if (!bounds) throw new Error(`Expected visible layout geometry for ${locator}`);
+  return { ...bounds, right: bounds.x + bounds.width, bottom: bounds.y + bounds.height };
+}
+
 async function expectThemedPortal(overlay: Locator, direction: Direction) {
   await expect(overlay).toBeVisible();
   const resolved = await overlay.evaluate(element => {
@@ -72,6 +105,7 @@ for (const { id, label } of directions) {
       await open(page, id, { theme: scheme });
       await expect(page.locator("body")).toHaveCSS("color-scheme", scheme);
       await expect(page.getByRole("radio", { name: label, exact: true })).toBeChecked();
+      await expectSingleWorkspace(page, id);
 
       const metrics = page.getByRole("region", { name: "工作区指标" });
       for (const value of ["24", "94.2%", "18/21"]) {
@@ -89,12 +123,76 @@ for (const { id, label } of directions) {
       await expect(page.locator("main")).toHaveCount(1);
       await expect(page.locator("img, canvas, video")).toHaveCount(0);
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(viewport.width);
+      if (name === "mobile") {
+        const topEdges = await slots(page).evaluateAll(items => items.map(item => item.getBoundingClientRect().top));
+        expect(topEdges.every((top, index) => index === 0 || top > topEdges[index - 1])).toBe(true);
+      }
 
       await audit(page);
       expect(imageRequests).toEqual([]);
       if (screenshot) await expect(page).toHaveScreenshot(`reference-${id}-${name}-${scheme}.png`, { fullPage: true });
     });
   }
+}
+
+for (const { id, label } of directions) {
+  test(`${label} places its primary sections in the intended first-fold composition`, async ({ page }) => {
+    await page.setViewportSize(desktop);
+    await page.emulateMedia({ reducedMotion: "reduce" });
+    await open(page, id);
+    await expectSingleWorkspace(page, id);
+
+    const read = (region: Region) => renderedBox(composition(page).locator(`:scope > .reference-slot[data-region="${region}"]`));
+    const [intro, metrics, execution, tools, tasks, approvals, activity, navigation, main, workspace] = await Promise.all([
+      read("intro"), read("metrics"), read("execution"), read("tools"), read("tasks"), read("approvals"), read("activity"),
+      renderedBox(page.locator(".premium-sidebar")), renderedBox(composition(page)), renderedBox(page.locator(".premium-workspace")),
+    ]);
+
+    expect(intro.y).toBeLessThan(desktop.height);
+    if (id === "vercel") {
+      expect(navigation.bottom).toBeLessThanOrEqual(intro.y);
+      expect(navigation.width).toBeGreaterThan(main.width / 2);
+      expect(execution.y).toBeLessThan(tasks.y);
+      expect(tasks.y).toBeLessThan(desktop.height);
+      expect(Math.abs(tasks.y - activity.y)).toBeLessThanOrEqual(1);
+      expect(tasks.right).toBeLessThanOrEqual(activity.x);
+      expect(tasks.width).toBeGreaterThan(activity.width);
+      expect(metrics.y).toBeGreaterThan(activity.y);
+    } else if (id === "stripe") {
+      expect(navigation.right).toBeLessThanOrEqual(main.x);
+      expect(navigation.width).toBeLessThan(main.width / 4);
+      expect(metrics.y).toBeLessThan(tasks.y);
+      expect(tasks.y).toBeLessThan(desktop.height);
+      expect(tasks.y).toBeLessThan(execution.y);
+      expect(Math.abs(tasks.x - metrics.x)).toBeLessThanOrEqual(1);
+      expect(Math.abs(tasks.width - metrics.width)).toBeLessThanOrEqual(1);
+      await expect(page.locator(".reference-metric-scale:visible")).toHaveCount(2);
+      const meterValue = (metric: "recovery" | "delivered") =>
+        page.locator(`[data-metric="${metric}"] meter`).evaluate((meter: HTMLMeterElement) => meter.value);
+      expect(await meterValue("recovery")).toBeCloseTo(0.942);
+      expect(await meterValue("delivered")).toBeCloseTo(18 / 21);
+    } else if (id === "apple") {
+      expect(workspace.x).toBeGreaterThanOrEqual(24);
+      expect(workspace.right).toBeLessThanOrEqual(desktop.width - 24);
+      expect(navigation.bottom).toBeLessThanOrEqual(intro.y);
+      expect(execution.y).toBeLessThan(desktop.height);
+      expect(Math.abs(execution.y - approvals.y)).toBeLessThanOrEqual(1);
+      expect(execution.right).toBeLessThanOrEqual(approvals.x);
+      expect(metrics.y).toBeGreaterThan(execution.y);
+      expect(metrics.y).toBeLessThan(approvals.bottom);
+      expect(Math.abs(execution.x - metrics.x)).toBeLessThanOrEqual(1);
+    } else {
+      expect(navigation.right).toBeLessThanOrEqual(main.x);
+      expect(execution.y).toBeLessThan(desktop.height);
+      expect(Math.abs(execution.y - approvals.y)).toBeLessThanOrEqual(1);
+      expect(execution.right).toBeLessThanOrEqual(approvals.x);
+      expect(execution.width).toBeGreaterThan(approvals.width);
+      expect(metrics.y).toBeGreaterThan(execution.y);
+      expect(metrics.y).toBeLessThan(approvals.bottom);
+      expect(Math.abs(execution.x - metrics.x)).toBeLessThanOrEqual(1);
+      expect(tasks.y).toBeLessThan(tools.y);
+    }
+  });
 }
 
 test("direction, viewport and scheme switches preserve in-progress work", async ({ page }) => {
@@ -106,11 +204,15 @@ test("direction, viewport and scheme switches preserve in-progress work", async 
   const runningTask = task(page, "交互组件适配");
   await runningTask.getByRole("button", { name: "暂停交互组件适配" }).click();
   await expect(runningTask).toHaveAttribute("data-state", "paused");
+  const search = page.getByRole("searchbox", { name: "搜索任务" });
+  await search.fill("交互组件");
 
-  for (const { id, label } of directions.slice(1)) {
+  for (const { id, label } of [...directions.slice(1), directions[0]]) {
     await page.getByRole("radio", { name: label, exact: true }).check();
     await expect(page.locator("body")).toHaveAttribute("data-mf-reference", id);
+    await expectSingleWorkspace(page, id);
     await expect(draft).toHaveValue("继续处理这份工作区草稿");
+    await expect(search).toHaveValue("交互组件");
     await expect(runningTask).toHaveAttribute("data-state", "paused");
   }
 
@@ -121,6 +223,7 @@ test("direction, viewport and scheme switches preserve in-progress work", async 
   await page.getByRole("button", { name: "深色", exact: true }).click();
   await expect(page.locator("body")).toHaveCSS("color-scheme", "dark");
   await expect(draft).toHaveValue("继续处理这份工作区草稿");
+  await expect(search).toHaveValue("交互组件");
   await expect(runningTask).toHaveAttribute("data-state", "paused");
   await expect(runningTask).toContainText("68%");
 });

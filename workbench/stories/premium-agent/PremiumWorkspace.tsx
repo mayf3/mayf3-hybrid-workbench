@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ReactNode } from "react";
 import { Button, SelectField, StatusBadge, Switch, TextField } from "@mayf3/ui-react";
 import { Icon } from "../visual-directions/Icon";
 import {
@@ -91,11 +91,76 @@ function metricRatio(key: "active" | "recovery" | "delivered") {
   return undefined;
 }
 
-export function PremiumWorkspace({ refined = false }: { refined?: boolean }) {
+export type WorkspaceComposition = "vercel" | "stripe" | "apple" | "hybrid";
+
+type Region = "intro" | "metrics" | "execution" | "tools" | "tasks" | "approvals" | "activity"
+  | "changes" | "delivery" | "prompt" | "controls";
+
+const regionsByComposition: Record<WorkspaceComposition, readonly Region[]> = {
+  vercel: ["intro", "execution", "tasks", "activity", "tools", "approvals", "metrics", "delivery", "changes", "prompt", "controls"],
+  stripe: ["intro", "metrics", "tasks", "delivery", "execution", "approvals", "tools", "activity", "changes", "prompt", "controls"],
+  apple: ["intro", "execution", "approvals", "metrics", "tools", "activity", "tasks", "delivery", "changes", "prompt", "controls"],
+  hybrid: ["intro", "execution", "approvals", "metrics", "tasks", "activity", "tools", "delivery", "changes", "prompt", "controls"],
+};
+
+export function PremiumWorkspace({ refined = false, composition }: {
+  refined?: boolean;
+  composition?: WorkspaceComposition;
+}) {
   const workspace = useAgentWorkspace(refined);
   const [current, setCurrent] = useState("overview");
+  const regions: Record<Region, ReactNode> = {
+    intro: (
+      <div className="premium-page-header">
+        <div>
+          <h1 id="premium-page-title">Agent 工作台</h1>
+          <p>查看当前执行、人工审批与可核验的交付。</p>
+        </div>
+        <Button onPress={focusPrompt} className="premium-new-task">新建任务 <Icon name="arrow" /></Button>
+      </div>
+    ),
+    metrics: (
+      <section className="premium-metrics" aria-label="工作区指标">
+        {metrics.map(({ title, key, context, icon }) => {
+          const value = key === "active" ? workspace.activeCount : workspaceMetrics[key];
+          const updated = key === "active" && value !== workspaceMetrics.active;
+          const ratio = refined ? metricRatio(key) : undefined;
+          return (
+            <div className="premium-metric" data-metric={composition ? key : undefined} key={title}>
+              <div className="premium-metric__name">{!refined && <Icon name={icon} />}<h2>{title}</h2></div>
+              <bdi key={value} className="premium-metric__value" data-updated={updated || undefined}>{value}</bdi>
+              <span className="premium-metric__context">{context}</span>
+              {ratio !== undefined && (
+                <>
+                  <meter className="premium-metric__meter" min={0} max={1} value={ratio} aria-hidden="true" />
+                  {composition && (
+                    <div className="reference-metric-scale" aria-hidden="true">
+                      <span>0%</span><span>50%</span><span>100%</span>
+                    </div>
+                  )}
+                </>
+              )}
+            </div>
+          );
+        })}
+      </section>
+    ),
+    execution: (
+      <div className="premium-focal" data-visual-level="l2">
+        <AgentThinkingState task={workspace.activeTask} refined={refined} />
+      </div>
+    ),
+    tools: <AgentToolCalls calls={workspace.calls} onRetry={workspace.retryTool} refined={refined} />,
+    tasks: <AgentTasks tasks={workspace.tasks} onTaskAction={workspace.updateTask} refined={refined} />,
+    approvals: <AgentApprovals approvals={workspace.approvals} onDecision={workspace.decideApproval} />,
+    activity: <AgentActivityTimeline events={workspace.events} refined={refined} />,
+    changes: <AgentDiffTable changes={workspace.changes} />,
+    delivery: <AgentDeliverySummary delivery={workspace.delivery} refined={refined} />,
+    prompt: <AgentPromptBar onSubmit={workspace.submitPrompt} />,
+    controls: <ControlSamples />,
+  };
   return (
-    <div className="premium-workspace">
+    <div className="premium-workspace" data-reference-composition={composition}>
       <header className="premium-header">
         <a className="premium-brand" href="#overview" onClick={() => setCurrent("overview")}>
           <span className="premium-brand__symbol"><Icon name="logo" /></span>
@@ -118,52 +183,36 @@ export function PremiumWorkspace({ refined = false }: { refined?: boolean }) {
           </nav>
         </aside>
 
-        <main id="overview" className="premium-content" aria-labelledby="premium-page-title">
-          <div className="premium-page-header">
-            <div>
-              <h1 id="premium-page-title">Agent 工作台</h1>
-              <p>查看当前执行、人工审批与可核验的交付。</p>
-            </div>
-            <Button onPress={focusPrompt} className="premium-new-task">新建任务 <Icon name="arrow" /></Button>
-          </div>
-
-          <section className="premium-metrics" aria-label="工作区指标">
-            {metrics.map(({ title, key, context, icon }) => {
-              const value = key === "active" ? workspace.activeCount : workspaceMetrics[key];
-              const updated = key === "active" && value !== workspaceMetrics.active;
-              const ratio = refined ? metricRatio(key) : undefined;
-              return (
-                <div className="premium-metric" key={title}>
-                  <div className="premium-metric__name">{!refined && <Icon name={icon} />}<h2>{title}</h2></div>
-                  <bdi key={value} className="premium-metric__value" data-updated={updated || undefined}>{value}</bdi>
-                  <span className="premium-metric__context">{context}</span>
-                  {ratio !== undefined && <meter className="premium-metric__meter" min={0} max={1} value={ratio} aria-hidden="true" />}
-                </div>
-              );
-            })}
-          </section>
-
-          <div className="premium-run-grid">
-            <div className="premium-execution-stack">
-              <div className="premium-focal" data-visual-level="l2">
-                <AgentThinkingState task={workspace.activeTask} refined={refined} />
+        <main id="overview" className={composition ? "premium-content reference-composition" : "premium-content"} aria-labelledby="premium-page-title">
+          {composition ? (
+            regionsByComposition[composition].map(region => (
+              <div key={region} className="reference-slot" data-region={region}>
+                {regions[region]}
               </div>
-              <AgentToolCalls calls={workspace.calls} onRetry={workspace.retryTool} refined={refined} />
-              <AgentTasks tasks={workspace.tasks} onTaskAction={workspace.updateTask} refined={refined} />
-            </div>
-            <div className="premium-review-stack">
-              <AgentApprovals approvals={workspace.approvals} onDecision={workspace.decideApproval} />
-              <AgentActivityTimeline events={workspace.events} refined={refined} />
-            </div>
-          </div>
-
-          <div className="premium-reviews">
-            <AgentDiffTable changes={workspace.changes} />
-            <AgentDeliverySummary delivery={workspace.delivery} refined={refined} />
-          </div>
-
-          <AgentPromptBar onSubmit={workspace.submitPrompt} />
-          <ControlSamples />
+            ))
+          ) : (
+            <>
+              {regions.intro}
+              {regions.metrics}
+              <div className="premium-run-grid">
+                <div className="premium-execution-stack">
+                  {regions.execution}
+                  {regions.tools}
+                  {regions.tasks}
+                </div>
+                <div className="premium-review-stack">
+                  {regions.approvals}
+                  {regions.activity}
+                </div>
+              </div>
+              <div className="premium-reviews">
+                {regions.changes}
+                {regions.delivery}
+              </div>
+              {regions.prompt}
+              {regions.controls}
+            </>
+          )}
         </main>
       </div>
     </div>

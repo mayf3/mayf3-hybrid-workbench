@@ -50,7 +50,6 @@ body[data-mf-reference="stripe"][data-mf-premium][data-mf-art-direction][data-mf
   --mf-surface-canvas: var(--mf-surface-raised);
   --mf-premium-sidebar-background: var(--mf-surface-default);
   --mf-premium-type-numeric: 560 clamp(1.45rem, 3.1cqi, 2.75rem) / 1.02 var(--mf-premium-font-sans);
-  --mf-reference-run-split: minmax(0, 1.95fr) minmax(0, 1fr);
   --mf-reference-metric-tracking: -0.04em;
   --mf-reference-metric-marker: var(--mf-space-1);
   --mf-reference-metric-edge: var(--mf-edge-strong);
@@ -93,7 +92,6 @@ body[data-mf-reference="hybrid"][data-mf-premium][data-mf-art-direction][data-mf
   --mf-surface-canvas: color-mix(in srgb, var(--mf-premium-neutral-raised) 76%, var(--mf-premium-neutral-canvas));
   --mf-reference-nav-fill: var(--mf-color-accent-soft);
   --mf-reference-focal-depth: var(--mf-elevation-1);
-  --mf-reference-run-split: minmax(0, 1.8fr) minmax(0, 1fr);
   --mf-reference-metric-span: calc(var(--mf-space-12) + var(--mf-space-8));
   --mf-reference-approval-radius: var(--mf-premium-radius-chip);
   --mf-reference-approval-gap: var(--mf-space-2);
@@ -195,10 +193,6 @@ body[data-mf-reference][data-mf-premium][data-mf-surface][data-density="spacious
       calc(var(--mf-reference-workspace-rail) + var(--mf-premium-content-padding) - var(--mf-space-5) - var(--mf-space-3))
       minmax(0, 1fr) auto;
   }
-}
-
-@container (min-width: 691px) {
-  .reference-study :is(.premium-run-grid, .premium-reviews) { grid-template-columns: var(--mf-reference-run-split); }
 }
 
 @container (max-width: 470px) {

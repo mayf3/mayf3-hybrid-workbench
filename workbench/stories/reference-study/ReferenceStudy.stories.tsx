@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from "@storybook/react-vite";
 import { useLayoutEffect, useState } from "react";
 import { I18nProvider } from "react-aria-components";
-import { PremiumWorkspace } from "../premium-agent/PremiumWorkspace";
+import { PremiumWorkspace, type WorkspaceComposition } from "../premium-agent/PremiumWorkspace";
 import "../visual-directions/themes.css";
 import "../visual-directions/workspace.css";
 import "../sky-precision/materials.css";
@@ -9,6 +9,7 @@ import "../premium-agent/themes.css";
 import "../premium-agent/premium-workspace.css";
 import "../premium-agent/hybrid-refinement.css";
 import "./reference.css";
+import "./composition.css";
 
 const directions = [
   { id: "vercel", label: "Vercel-inspired" },
@@ -22,7 +23,7 @@ const widths = [
   { id: "mobile", label: "移动", width: 390 },
 ] as const;
 
-type Direction = typeof directions[number]["id"];
+type Direction = WorkspaceComposition;
 type Width = typeof widths[number]["id"];
 type Scheme = "light" | "dark";
 type Args = { direction: Direction };
@@ -35,7 +36,7 @@ function ReferenceStudy({ direction, scheme, density, dir }: Args & {
   const [selection, setSelection] = useState<Direction>();
   const [appearance, setAppearance] = useState<Scheme>();
   const [width, setWidth] = useState<Width>(() => innerWidth <= 520 ? "mobile" : innerWidth <= 950 ? "tablet" : "desktop");
-  const active = selection ?? direction;
+  const active = selection ?? (directions.some(option => option.id === direction) ? direction : "hybrid");
   const colorScheme = appearance ?? scheme;
 
   useLayoutEffect(() => {
@@ -93,11 +94,17 @@ function ReferenceStudy({ direction, scheme, density, dir }: Args & {
                 ))}
               </fieldset>
               <button type="button" aria-pressed={colorScheme === "dark"} onClick={() => setAppearance(colorScheme === "light" ? "dark" : "light")}>深色</button>
+              <a
+                href={`./iframe.html?id=premium-ui--hybrid-refinement&viewMode=story&globals=theme:${colorScheme};dir:${dir};density:${density}`}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="在新标签页打开原版 Hybrid"
+              >原版</a>
             </div>
           </div>
         </section>
         <div className="premium-viewport" data-layout={width}>
-          <PremiumWorkspace refined />
+          <PremiumWorkspace refined composition={active} />
         </div>
       </div>
     </I18nProvider>
