@@ -22,6 +22,8 @@ const componentStyles = [
   "packages/react/src/styles.css",
   "workbench/stories/visual-directions/controls.css",
   "workbench/stories/visual-directions/workspace.css",
+  "workbench/stories/reference-study/reference.css",
+  "workbench/stories/reference-study/composition.css",
   ...precisionConsumers,
   ...premiumConsumers,
 ];

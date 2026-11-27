@@ -1,0 +1,214 @@
+/* Preview recipes rebind the same semantic roles used by the shared components. */
+body[data-mf-reference][data-mf-premium][data-mf-art-direction][data-mf-surface] {
+  --mf-premium-numeric-variant: tabular-nums lining-nums;
+  --mf-premium-type-display: 640 clamp(1.625rem, 2.9cqi, 2.375rem) / 1.13 var(--mf-premium-font-sans);
+  --mf-premium-type-numeric: 600 clamp(1.375rem, 2.85cqi, 2.5rem) / 1.05 var(--mf-premium-font-sans);
+  --mf-premium-feature-background: none;
+  --mf-hybrid-focal-flat: var(--mf-surface-default);
+  --mf-hybrid-approval-depth: var(--mf-elevation-0);
+  --mf-reference-section-rule: var(--mf-edge-subtle);
+  --mf-reference-approval-fill: var(--mf-surface-canvas);
+  --mf-reference-approval-radius: 0;
+  --mf-reference-approval-gap: 0;
+  --mf-reference-approval-inset: var(--mf-space-3);
+  --mf-reference-group-fill: var(--mf-surface-canvas);
+  --mf-reference-group-radius: 0;
+  --mf-reference-nav-fill: var(--mf-surface-sunken);
+  --mf-reference-nav-edge: var(--mf-color-accent-default);
+  --mf-reference-focal-edge: var(--mf-edge-subtle);
+  --mf-reference-focal-radius: var(--mf-premium-radius-card);
+  --mf-reference-focal-depth: var(--mf-elevation-0);
+  --mf-reference-focal-inset: var(--mf-space-4);
+  --mf-reference-tool-row-inset: 0;
+  --mf-reference-metric-inset: var(--mf-space-3);
+  --mf-reference-metric-fill: var(--mf-surface-canvas);
+  --mf-reference-metric-edge: var(--mf-edge-subtle);
+  --mf-reference-metric-context: var(--mf-color-text-secondary);
+  --mf-reference-metric-min: var(--mf-space-12);
+  --mf-reference-metric-marker: var(--mf-border-weight-strong);
+}
+
+body[data-mf-reference="vercel"][data-mf-premium][data-mf-art-direction][data-mf-surface] {
+  --mf-surface-canvas: color-mix(in srgb, var(--mf-surface-raised) 66%, var(--mf-surface-default));
+  --mf-premium-sidebar-background: var(--mf-surface-raised);
+  --mf-premium-radius-control: var(--mf-reference-radius-precise);
+  --mf-premium-radius-chip: var(--mf-reference-radius-precise);
+  --mf-premium-radius-window: var(--mf-premium-radius-card);
+  --mf-reference-workspace-rail: 13rem;
+  --mf-reference-nav-edge: var(--mf-control-primary-base);
+  --mf-reference-focal-radius: var(--mf-reference-radius-precise);
+  --mf-reference-focal-inset: var(--mf-space-3);
+  --mf-reference-metric-rule: 0;
+  --mf-reference-metric-span: var(--mf-space-8);
+  --mf-premium-type-numeric: 590 clamp(1.375rem, 2.2cqi, 2rem) / 1.08 var(--mf-premium-font-sans);
+  --mf-premium-elevation-button: var(--mf-elevation-0);
+  --mf-premium-elevation-hairline: var(--mf-elevation-0);
+  --mf-premium-elevation-raised: var(--mf-edge-light-top), var(--mf-shadow-contact-md);
+}
+
+body[data-mf-reference="stripe"][data-mf-premium][data-mf-art-direction][data-mf-surface] {
+  --mf-surface-canvas: var(--mf-surface-raised);
+  --mf-premium-sidebar-background: var(--mf-surface-default);
+  --mf-premium-type-numeric: 560 clamp(1.45rem, 3.1cqi, 2.75rem) / 1.02 var(--mf-premium-font-sans);
+  --mf-reference-metric-tracking: -0.04em;
+  --mf-reference-metric-marker: var(--mf-space-1);
+  --mf-reference-metric-edge: var(--mf-edge-strong);
+  --mf-reference-focal-radius: 0;
+  --mf-reference-focal-edge: var(--mf-hybrid-metric-value);
+  --mf-reference-approval-inset: var(--mf-space-3);
+  --mf-premium-elevation-button: var(--mf-shadow-contact-sm);
+  --mf-premium-elevation-hairline: var(--mf-elevation-0);
+}
+
+body[data-mf-reference="apple"][data-mf-premium][data-mf-art-direction][data-mf-surface] {
+  --mf-surface-canvas: color-mix(in srgb, var(--mf-premium-neutral-canvas) 85%, var(--mf-premium-neutral-sunken));
+  --mf-premium-sidebar-background: var(--mf-surface-default);
+  --mf-premium-radius-control: var(--mf-premium-radius-card);
+  --mf-premium-radius-chip: var(--mf-premium-radius-pill);
+  --mf-reference-workspace-rail: 11.5rem;
+  --mf-reference-nav-edge: transparent;
+  --mf-reference-nav-fill: var(--mf-color-accent-soft);
+  --mf-reference-approval-fill: var(--mf-surface-raised);
+  --mf-reference-approval-inset: var(--mf-space-4);
+  --mf-reference-group-fill: var(--mf-surface-raised);
+  --mf-reference-group-radius: var(--mf-premium-radius-panel);
+  --mf-reference-metric-inset: var(--mf-space-4);
+  --mf-reference-metric-rule: 0;
+  --mf-reference-metric-span: calc(var(--mf-space-8) + var(--mf-space-8));
+  --mf-reference-focal-radius: var(--mf-premium-radius-window);
+  --mf-reference-tool-row-inset: var(--mf-space-1);
+  --mf-reference-focal-depth: var(--mf-elevation-2);
+  --mf-hybrid-focal-flat: var(--mf-surface-raised);
+  --mf-control-primary-paint: linear-gradient(180deg, var(--mf-control-primary-top), var(--mf-control-primary-base));
+  --mf-control-primary-hover-paint: linear-gradient(180deg, var(--mf-control-primary-hover-top), var(--mf-control-primary-hover-base));
+  --mf-premium-elevation-hairline: var(--mf-edge-light-top), var(--mf-control-shadow-recessed);
+  --mf-premium-elevation-button: var(--mf-control-light-top), var(--mf-shadow-contact-sm), var(--mf-shadow-ambient-sm);
+  --mf-premium-elevation-overlay: var(--mf-elevation-3);
+  --mf-surface-glass: color-mix(in srgb, var(--mf-surface-raised) var(--mf-reference-overlay-opacity), transparent);
+  --mf-material-blur: var(--mf-space-3);
+}
+
+body[data-mf-reference="hybrid"][data-mf-premium][data-mf-art-direction][data-mf-surface] {
+  --mf-surface-canvas: color-mix(in srgb, var(--mf-premium-neutral-raised) 76%, var(--mf-premium-neutral-canvas));
+  --mf-reference-nav-fill: var(--mf-color-accent-soft);
+  --mf-reference-focal-depth: var(--mf-elevation-1);
+  --mf-reference-metric-span: calc(var(--mf-space-12) + var(--mf-space-8));
+  --mf-reference-approval-radius: var(--mf-premium-radius-chip);
+  --mf-reference-approval-gap: var(--mf-space-2);
+  --mf-reference-approval-fill: var(--mf-surface-default);
+  --mf-reference-metric-inset: var(--mf-space-2);
+  --mf-premium-type-numeric: 610 clamp(1.375rem, 2.65cqi, 2.125rem) / 1.05 var(--mf-premium-font-sans);
+  --mf-hybrid-focal-flat: color-mix(in srgb, var(--mf-surface-tint) 38%, var(--mf-surface-default));
+  --mf-premium-elevation-hairline: var(--mf-edge-light-top), var(--mf-shadow-contact-sm);
+  --mf-premium-tab-duration: var(--mf-motion-duration-normal);
+}
+
+body[data-mf-reference="hybrid"][data-mf-premium][data-mf-art-direction][data-mf-surface][data-theme="dark"] {
+  --mf-surface-canvas: var(--mf-premium-neutral-canvas);
+  --mf-reference-approval-fill: var(--mf-surface-default);
+}
+
+body[data-mf-reference][data-mf-premium][data-mf-surface][data-density="spacious"] {
+  --mf-density-control-height: var(--mf-control-height-lg);
+  --mf-premium-row-block: var(--mf-space-4);
+  --mf-premium-section-gap: var(--mf-space-6);
+}
+
+.reference-study .premium-workspace { --mf-premium-shell-rail: var(--mf-reference-workspace-rail); }
+.reference-study .premium-toolbar__row > fieldset { justify-content: space-between; }
+.reference-study .premium-header { border-block-end-color: var(--mf-reference-section-rule); }
+.reference-study .premium-sidebar [aria-current] {
+  background: var(--mf-reference-nav-fill);
+  border-inline-start-color: var(--mf-reference-nav-edge);
+}
+.reference-study .premium-metrics {
+  padding-block: var(--mf-reference-metric-inset);
+  border-block: var(--mf-reference-metric-rule) solid var(--mf-reference-metric-edge);
+  background: var(--mf-reference-metric-fill);
+}
+.reference-study .premium-metric { min-block-size: var(--mf-reference-metric-min); }
+.reference-study .premium-metric__value {
+  letter-spacing: var(--mf-reference-metric-tracking);
+  font-variant-numeric: var(--mf-premium-numeric-variant);
+}
+.reference-study .premium-metric__context { color: var(--mf-reference-metric-context); }
+.reference-study .premium-metric__meter {
+  inline-size: min(100%, var(--mf-reference-metric-span));
+  block-size: var(--mf-reference-metric-marker);
+}
+
+.reference-study .premium-focal {
+  padding: var(--mf-reference-focal-inset);
+  border-color: var(--mf-reference-focal-edge);
+  border-radius: var(--mf-reference-focal-radius);
+  box-shadow: var(--mf-reference-focal-depth);
+}
+.reference-study .agent-approvals-list {
+  gap: var(--mf-reference-approval-gap);
+  border-radius: var(--mf-reference-group-radius);
+  background: var(--mf-reference-group-fill);
+}
+.reference-study .agent-approval {
+  padding: var(--mf-reference-approval-inset);
+  border: 0;
+  border-block-start: var(--mf-border-weight) solid var(--mf-reference-section-rule);
+  border-radius: var(--mf-reference-approval-radius);
+  background: var(--mf-reference-approval-fill);
+  box-shadow: var(--mf-elevation-0);
+}
+.reference-study .agent-approval[data-risk="high"] { box-shadow: var(--mf-elevation-0); }
+.reference-study .agent-event-list li { border-block-end: var(--mf-border-weight) solid var(--mf-reference-section-rule); }
+.reference-study .agent-event-list li + li { padding-block-start: var(--mf-space-2); }
+.reference-study .agent-event-list li::after { display: none; }
+.reference-study .agent-delivery-details dd {
+  font-variant-numeric: var(--mf-premium-numeric-variant);
+  overflow-wrap: anywhere;
+}
+.reference-study .agent-tool summary { padding-block: var(--mf-reference-tool-row-inset); }
+
+[data-mf-reference="stripe"] .premium-focal {
+  border: 0;
+  border-inline-start: var(--mf-border-weight-strong) solid var(--mf-reference-focal-edge);
+}
+[data-mf-reference="stripe"] .agent-tasks .agent-table thead th:last-child { text-align: end; }
+[data-mf-reference="stripe"] .agent-tasks .agent-table .agent-progress { justify-content: end; }
+[data-mf-reference="apple"] .agent-approvals-list { outline: var(--mf-border-weight) solid var(--mf-reference-section-rule); }
+[data-mf-reference="apple"] .agent-approval:first-child {
+  border-color: transparent;
+  border-start-start-radius: var(--mf-reference-group-radius);
+  border-start-end-radius: var(--mf-reference-group-radius);
+}
+[data-mf-reference="apple"] .agent-approval:last-child {
+  border-end-start-radius: var(--mf-reference-group-radius);
+  border-end-end-radius: var(--mf-reference-group-radius);
+}
+[data-mf-reference="apple"] .agent-approval-impact { border-radius: var(--mf-premium-radius-control); }
+[data-mf-reference="hybrid"] .agent-approval {
+  border: var(--mf-border-weight) solid var(--mf-reference-section-rule);
+}
+
+@container (min-width: 951px) {
+  .reference-study .premium-header {
+    grid-template-columns:
+      calc(var(--mf-reference-workspace-rail) + var(--mf-premium-content-padding) - var(--mf-space-5) - var(--mf-space-3))
+      minmax(0, 1fr) auto;
+  }
+}
+
+@container (max-width: 470px) {
+  .reference-study .premium-metric__value { font-size: var(--mf-font-size-xl); }
+  .reference-study .premium-metric:first-child { padding-inline-start: 0; }
+}
+
+@media (max-width: 560px) {
+  .reference-study .premium-toolbar__row > fieldset {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    inline-size: 100%;
+  }
+  .reference-study .premium-toolbar__row > fieldset label span {
+    inline-size: 100%;
+    text-align: center;
+    white-space: normal;
+  }
+}

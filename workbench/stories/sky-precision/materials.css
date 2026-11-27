@@ -83,16 +83,21 @@
   --mf-motion-spring: var(--mf-motion-ease-spring);
 }
 
-[data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
+/* Premium owns these aliases when both scopes are active, independent of
+ * which story loaded its CSS first. Standalone Precision still overrides light. */
+[data-sky-theme="air"][data-mf-surface="precision"]:where([data-theme="dark"]) {
   --mf-surface-canvas: #101b2a;
   --mf-surface-default: #172638;
   --mf-surface-raised: #213349;
   --mf-surface-sunken: #142132;
+  --mf-edge-subtle: #36516c;
+  --mf-edge-strong: #70849b;
+}
+
+[data-sky-theme="air"][data-mf-surface="precision"][data-theme="dark"] {
   --mf-surface-tint: #223d5c;
   --mf-surface-highlight: #2b4764;
   --mf-edge-highlight: rgb(208 230 251 / 0.18);
-  --mf-edge-subtle: #36516c;
-  --mf-edge-strong: #70849b;
   --mf-shadow-contact-ink: rgb(3 11 23 / 0.52);
   --mf-shadow-ambient-ink: rgb(2 8 18 / 0.29);
   --mf-control-primary-top: #a8d7ff;
