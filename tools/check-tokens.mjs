@@ -18,7 +18,13 @@ const premiumConsumers = readdirSync(path.join(ROOT, premiumDir))
   .filter(file => file.endsWith(".css") && file !== "themes.css")
   .map(file => `${premiumDir}/${file}`);
 
+const artDirectionDir = "workbench/stories/art-direction-v2";
+const artDirectionStyles = readdirSync(path.join(ROOT, artDirectionDir))
+  .filter(file => file.endsWith(".css"))
+  .map(file => `${artDirectionDir}/${file}`);
+
 const componentStyles = [
+  ...artDirectionStyles,
   "packages/react/src/styles.css",
   "workbench/stories/visual-directions/controls.css",
   "workbench/stories/visual-directions/workspace.css",

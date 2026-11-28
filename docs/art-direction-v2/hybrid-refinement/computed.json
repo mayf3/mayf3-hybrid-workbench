@@ -1,0 +1,1076 @@
+{
+  "before": {
+    "sha": "aab7f853dc492b1c2ed8710901f73773d32ff970",
+    "browser": "chromium",
+    "version": "159.0.8154.6",
+    "selected": "交互组件适配",
+    "execution": 68,
+    "delivery": [
+      18,
+      21
+    ],
+    "scrollY": 0,
+    "theme": "light",
+    "density": "comfortable",
+    "dir": "ltr"
+  },
+  "after": {
+    "sha": "d02fb97a58ab378710dc149dc5fc145e9000f71d",
+    "browser": "chromium",
+    "version": "159.0.8154.6",
+    "selected": "交互组件适配",
+    "execution": 68,
+    "delivery": [
+      18,
+      21
+    ],
+    "scrollY": 0,
+    "theme": "light",
+    "density": "comfortable",
+    "dir": "ltr"
+  },
+  "desktopProduct": {
+    "before": {
+      "importedLegacyRuleCount": 13,
+      "oldAttributeEnabled": false,
+      "matchedLegacyElements": 0,
+      "scroll": {
+        "x": 0,
+        "y": 0,
+        "width": 1440
+      },
+      "mobileIndex": {
+        "listVisible": true,
+        "disclosureOpen": null
+      },
+      "action": {
+        "x": 874.921875,
+        "y": 428.5,
+        "width": 74,
+        "height": 32
+      },
+      "taskTitle": {
+        "rect": {
+          "x": 319.078125,
+          "y": 276.265625,
+          "width": 641.84375,
+          "height": 40.453125
+        },
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontSize": "34px",
+        "fontWeight": "660",
+        "letterSpacing": "normal",
+        "lineHeight": "40.46px"
+      },
+      "canvas": {
+        "backgroundColor": "color(srgb 0.979686 0.988392 0.997098)",
+        "backgroundImage": "none"
+      },
+      "brief": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "borderInlineStartColor": "rgb(207, 223, 234)",
+        "borderRadius": "12px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 1px 2px -1px, rgba(45, 65, 88, 0.11) 0px 4px 10px -4px"
+      },
+      "index": {
+        "rect": {
+          "x": 46.078125,
+          "y": 199.875,
+          "width": 224,
+          "height": 406
+        },
+        "backgroundColor": "color(srgb 0.0718431 0.237804 0.411294)",
+        "borderInlineStartColor": "rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      "selectedTask": {
+        "backgroundColor": "color(srgb 0.192504 0.336889 0.487826)",
+        "borderInlineStartColor": "rgb(255, 255, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px"
+      },
+      "approval": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderInlineStartColor": "rgb(161, 59, 72)",
+        "borderInlineStartWidth": "1px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset",
+        "paddingBlockStart": "16px"
+      },
+      "consequence": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "label": "rgb(161, 59, 72)",
+        "value": "rgb(161, 59, 72)"
+      },
+      "risk": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "color": "rgb(161, 59, 72)"
+      },
+      "progress": {
+        "appearance": "auto",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "blockSize": "14px",
+        "borderRadius": "0px"
+      },
+      "delivery": {
+        "appearance": "auto",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "blockSize": "14px",
+        "borderRadius": "0px"
+      },
+      "progressValue": {
+        "fontSize": "28px",
+        "fontVariantNumeric": "tabular-nums",
+        "fontWeight": "650",
+        "lineHeight": "30.8px"
+      }
+    },
+    "after": {
+      "importedLegacyRuleCount": 13,
+      "oldAttributeEnabled": false,
+      "matchedLegacyElements": 0,
+      "scroll": {
+        "x": 0,
+        "y": 0,
+        "width": 1440
+      },
+      "mobileIndex": {
+        "listVisible": true,
+        "disclosureOpen": false
+      },
+      "action": {
+        "x": 898.921875,
+        "y": 309.5,
+        "width": 74,
+        "height": 32
+      },
+      "taskTitle": {
+        "rect": {
+          "x": 319.078125,
+          "y": 165.390625,
+          "width": 653.84375,
+          "height": 44.828125
+        },
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontSize": "38px",
+        "fontWeight": "620",
+        "letterSpacing": "-0.874px",
+        "lineHeight": "44.84px"
+      },
+      "canvas": {
+        "backgroundColor": "color(srgb 0.977412 0.986196 0.993725)",
+        "backgroundImage": "none"
+      },
+      "brief": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "linear-gradient(color(srgb 0.968157 0.985726 1), rgb(255, 255, 255) 144px)",
+        "borderInlineStartColor": "color(srgb 0.85152 0.901314 0.935906)",
+        "borderRadius": "12px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 3px 6px -3px, rgba(45, 65, 88, 0.11) 0px 4px 10px -4px"
+      },
+      "index": {
+        "rect": {
+          "x": 46.078125,
+          "y": 89,
+          "width": 220,
+          "height": 265.734375
+        },
+        "backgroundColor": "color(srgb 0.956772 0.973583 0.987992)",
+        "borderInlineStartColor": "rgb(23, 43, 66)",
+        "boxShadow": "none"
+      },
+      "selectedTask": {
+        "backgroundColor": "color(srgb 0.903194 0.954915 0.997118)",
+        "borderInlineStartColor": "rgb(10, 92, 174)",
+        "color": "rgb(23, 43, 66)",
+        "borderRadius": "6px"
+      },
+      "approval": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderInlineStartColor": "rgb(23, 43, 66)",
+        "borderInlineStartWidth": "0px",
+        "boxShadow": "none",
+        "paddingBlockStart": "12px"
+      },
+      "consequence": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "label": "rgb(67, 91, 115)",
+        "value": "rgb(23, 43, 66)"
+      },
+      "risk": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "color": "rgb(161, 59, 72)"
+      },
+      "progress": {
+        "appearance": "none",
+        "backgroundColor": "color(srgb 0.788078 0.861176 0.930824)",
+        "blockSize": "6px",
+        "borderRadius": "999px"
+      },
+      "delivery": {
+        "appearance": "none",
+        "backgroundColor": "color(srgb 0.788078 0.861176 0.930824)",
+        "blockSize": "6px",
+        "borderRadius": "999px"
+      },
+      "progressValue": {
+        "fontSize": "28px",
+        "fontVariantNumeric": "tabular-nums",
+        "fontWeight": "620",
+        "lineHeight": "29.4px"
+      }
+    }
+  },
+  "mobileProduct": {
+    "before": {
+      "importedLegacyRuleCount": 13,
+      "oldAttributeEnabled": false,
+      "matchedLegacyElements": 0,
+      "scroll": {
+        "x": 0,
+        "y": 0,
+        "width": 390
+      },
+      "mobileIndex": {
+        "listVisible": true,
+        "disclosureOpen": null
+      },
+      "action": {
+        "x": 275,
+        "y": 740.125,
+        "width": 74,
+        "height": 32
+      },
+      "taskTitle": {
+        "rect": {
+          "x": 29,
+          "y": 602.171875,
+          "width": 332,
+          "height": 26.171875
+        },
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontSize": "22px",
+        "fontWeight": "660",
+        "letterSpacing": "normal",
+        "lineHeight": "26.18px"
+      },
+      "canvas": {
+        "backgroundColor": "color(srgb 0.979686 0.988392 0.997098)",
+        "backgroundImage": "none"
+      },
+      "brief": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "backgroundImage": "none",
+        "borderInlineStartColor": "rgb(207, 223, 234)",
+        "borderRadius": "12px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 1px 2px -1px, rgba(45, 65, 88, 0.11) 0px 4px 10px -4px"
+      },
+      "index": {
+        "rect": {
+          "x": 12,
+          "y": 270.859375,
+          "width": 366,
+          "height": 254.921875
+        },
+        "backgroundColor": "color(srgb 0.0718431 0.237804 0.411294)",
+        "borderInlineStartColor": "rgb(255, 255, 255)",
+        "boxShadow": "none"
+      },
+      "selectedTask": {
+        "backgroundColor": "color(srgb 0.192504 0.336889 0.487826)",
+        "borderInlineStartColor": "rgb(255, 255, 255)",
+        "color": "rgb(255, 255, 255)",
+        "borderRadius": "0px"
+      },
+      "approval": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderInlineStartColor": "rgb(161, 59, 72)",
+        "borderInlineStartWidth": "1px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset",
+        "paddingBlockStart": "12px"
+      },
+      "consequence": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "label": "rgb(161, 59, 72)",
+        "value": "rgb(161, 59, 72)"
+      },
+      "risk": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "color": "rgb(161, 59, 72)"
+      },
+      "progress": {
+        "appearance": "auto",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "blockSize": "14px",
+        "borderRadius": "0px"
+      },
+      "delivery": {
+        "appearance": "auto",
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "blockSize": "14px",
+        "borderRadius": "0px"
+      },
+      "progressValue": {
+        "fontSize": "28px",
+        "fontVariantNumeric": "tabular-nums",
+        "fontWeight": "650",
+        "lineHeight": "30.8px"
+      }
+    },
+    "after": {
+      "importedLegacyRuleCount": 13,
+      "oldAttributeEnabled": false,
+      "matchedLegacyElements": 0,
+      "scroll": {
+        "x": 0,
+        "y": 0,
+        "width": 390
+      },
+      "mobileIndex": {
+        "listVisible": false,
+        "disclosureOpen": false
+      },
+      "action": {
+        "x": 287,
+        "y": 329.390625,
+        "width": 74,
+        "height": 32
+      },
+      "taskTitle": {
+        "rect": {
+          "x": 29,
+          "y": 211.078125,
+          "width": 332,
+          "height": 33.03125
+        },
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontSize": "28px",
+        "fontWeight": "620",
+        "letterSpacing": "-0.644px",
+        "lineHeight": "33.04px"
+      },
+      "canvas": {
+        "backgroundColor": "color(srgb 0.977412 0.986196 0.993725)",
+        "backgroundImage": "none"
+      },
+      "brief": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "backgroundImage": "linear-gradient(color(srgb 0.968157 0.985726 1), rgb(255, 255, 255) 144px)",
+        "borderInlineStartColor": "color(srgb 0.85152 0.901314 0.935906)",
+        "borderRadius": "12px",
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 3px 6px -3px, rgba(45, 65, 88, 0.11) 0px 4px 10px -4px"
+      },
+      "index": {
+        "rect": {
+          "x": 0,
+          "y": 0,
+          "width": 0,
+          "height": 0
+        },
+        "backgroundColor": "color(srgb 0.956772 0.973583 0.987992)",
+        "borderInlineStartColor": "rgb(23, 43, 66)",
+        "boxShadow": "none"
+      },
+      "selectedTask": {
+        "backgroundColor": "color(srgb 0.903194 0.954915 0.997118)",
+        "borderInlineStartColor": "rgb(10, 92, 174)",
+        "color": "rgb(23, 43, 66)",
+        "borderRadius": "6px"
+      },
+      "approval": {
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderInlineStartColor": "rgb(23, 43, 66)",
+        "borderInlineStartWidth": "0px",
+        "boxShadow": "none",
+        "paddingBlockStart": "12px"
+      },
+      "consequence": {
+        "backgroundColor": "rgba(0, 0, 0, 0)",
+        "label": "rgb(67, 91, 115)",
+        "value": "rgb(23, 43, 66)"
+      },
+      "risk": {
+        "backgroundColor": "rgb(255, 240, 242)",
+        "color": "rgb(161, 59, 72)"
+      },
+      "progress": {
+        "appearance": "none",
+        "backgroundColor": "color(srgb 0.788078 0.861176 0.930824)",
+        "blockSize": "6px",
+        "borderRadius": "999px"
+      },
+      "delivery": {
+        "appearance": "none",
+        "backgroundColor": "color(srgb 0.788078 0.861176 0.930824)",
+        "blockSize": "6px",
+        "borderRadius": "999px"
+      },
+      "progressValue": {
+        "fontSize": "22px",
+        "fontVariantNumeric": "tabular-nums",
+        "fontWeight": "620",
+        "lineHeight": "23.1px"
+      }
+    }
+  },
+  "confirmation": {
+    "before": {
+      "surface": {
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 7px 12px -6px, rgba(45, 65, 88, 0.11) 0px 25px 54px -15px",
+        "borderColor": "rgb(207, 223, 234)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": "20px"
+      },
+      "title": {
+        "font": "680 18px / 24.3px Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontWeight": "680",
+        "fontSize": "18px",
+        "lineHeight": "24.3px",
+        "letterSpacing": "-0.324px"
+      },
+      "portalOutsideWorkspace": true,
+      "focusInitiallyOnCancel": true,
+      "cancelRestoresFocus": true,
+      "escapeRestoresFocus": true
+    },
+    "after": {
+      "surface": {
+        "boxShadow": "rgba(255, 255, 255, 0.88) 0px 1px 0px 0px inset, rgba(25, 47, 67, 0.19) 0px 7px 12px -6px, rgba(45, 65, 88, 0.11) 0px 12px 26px -10px",
+        "borderColor": "rgb(207, 223, 234)",
+        "backgroundColor": "rgb(255, 255, 255)",
+        "borderRadius": "20px"
+      },
+      "title": {
+        "font": "620 18px / 24.12px Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontFamily": "Inter, \"Noto Sans SC\", \"PingFang SC\", system-ui, sans-serif",
+        "fontWeight": "620",
+        "fontSize": "18px",
+        "lineHeight": "24.12px",
+        "letterSpacing": "-0.324px"
+      },
+      "portalOutsideWorkspace": true,
+      "focusInitiallyOnCancel": true,
+      "cancelRestoresFocus": true,
+      "escapeRestoresFocus": true
+    }
+  },
+  "desktopWorkbenchAction": {
+    "before": {
+      "x": 874.921875,
+      "y": 477.5,
+      "width": 74,
+      "height": 32
+    },
+    "after": {
+      "x": 898.921875,
+      "y": 358.5,
+      "width": 74,
+      "height": 32
+    }
+  },
+  "mobileWorkbenchAction": {
+    "before": {
+      "x": 275,
+      "y": 865.125,
+      "width": 74,
+      "height": 32
+    },
+    "after": {
+      "x": 287,
+      "y": 454.390625,
+      "width": 74,
+      "height": 32
+    }
+  },
+  "paint": {
+    "before": {
+      "execution-bar": {
+        "width": 642,
+        "height": 15,
+        "filledInterior": {
+          "x": 160,
+          "center": [
+            10,
+            92,
+            174
+          ],
+          "dominant": [
+            255,
+            255,
+            255
+          ],
+          "dominantRows": 7,
+          "samples": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              177,
+              196,
+              214
+            ],
+            [
+              36,
+              98,
+              159
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              36,
+              98,
+              159
+            ],
+            [
+              177,
+              196,
+              214
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ]
+        },
+        "emptyInterior": {
+          "x": 610,
+          "center": [
+            239,
+            239,
+            239
+          ],
+          "dominant": [
+            255,
+            255,
+            255
+          ],
+          "dominantRows": 7,
+          "samples": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              230,
+              230,
+              230
+            ],
+            [
+              208,
+              208,
+              208
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              208,
+              208,
+              208
+            ],
+            [
+              230,
+              230,
+              230
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              255,
+              255,
+              255
+            ]
+          ]
+        }
+      },
+      "delivery-meter": {
+        "width": 442,
+        "height": 15,
+        "filledInterior": {
+          "x": 110,
+          "center": [
+            16,
+            124,
+            16
+          ],
+          "dominant": [
+            250,
+            252,
+            254
+          ],
+          "dominantRows": 8,
+          "samples": [
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              203,
+              203,
+              203
+            ],
+            [
+              16,
+              124,
+              16
+            ],
+            [
+              16,
+              124,
+              16
+            ],
+            [
+              16,
+              124,
+              16
+            ],
+            [
+              16,
+              124,
+              16
+            ],
+            [
+              16,
+              124,
+              16
+            ],
+            [
+              203,
+              203,
+              203
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ]
+          ]
+        },
+        "emptyInterior": {
+          "x": 420,
+          "center": [
+            239,
+            239,
+            239
+          ],
+          "dominant": [
+            250,
+            252,
+            254
+          ],
+          "dominantRows": 8,
+          "samples": [
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              203,
+              203,
+              203
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              239,
+              239,
+              239
+            ],
+            [
+              203,
+              203,
+              203
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ],
+            [
+              250,
+              252,
+              254
+            ]
+          ]
+        }
+      }
+    },
+    "after": {
+      "execution-bar": {
+        "width": 654,
+        "height": 7,
+        "filledInterior": {
+          "x": 164,
+          "center": [
+            10,
+            92,
+            174
+          ],
+          "dominant": [
+            10,
+            92,
+            174
+          ],
+          "dominantRows": 6,
+          "samples": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ]
+          ]
+        },
+        "emptyInterior": {
+          "x": 621,
+          "center": [
+            201,
+            220,
+            237
+          ],
+          "dominant": [
+            201,
+            220,
+            237
+          ],
+          "dominantRows": 6,
+          "samples": [
+            [
+              255,
+              255,
+              255
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ]
+          ]
+        }
+      },
+      "delivery-meter": {
+        "width": 442,
+        "height": 7,
+        "filledInterior": {
+          "x": 110,
+          "center": [
+            10,
+            92,
+            174
+          ],
+          "dominant": [
+            10,
+            92,
+            174
+          ],
+          "dominantRows": 6,
+          "samples": [
+            [
+              249,
+              251,
+              253
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ],
+            [
+              10,
+              92,
+              174
+            ]
+          ]
+        },
+        "emptyInterior": {
+          "x": 420,
+          "center": [
+            201,
+            220,
+            237
+          ],
+          "dominant": [
+            201,
+            220,
+            237
+          ],
+          "dominantRows": 6,
+          "samples": [
+            [
+              249,
+              251,
+              253
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ],
+            [
+              201,
+              220,
+              237
+            ]
+          ]
+        }
+      }
+    }
+  }
+}
