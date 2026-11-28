@@ -30,7 +30,18 @@ for (const direction of directions) {
       const audit = await new AxeBuilder({ page }).analyze();
       expect(audit.violations.map(item => [item.id, item.nodes.map(node => node.target)])).toEqual([]);
       await expect(page.locator("main")).toHaveCount(1);
-      for (const text of ["语义 Token 整理", "交互组件适配", "Playwright 回归测试", "24", "94.2%", "18/21"]) {
+      const picker = direction === "hybrid" && screen.width === 390
+        ? product.locator(".v2h-mobile-picker")
+        : undefined;
+      if (picker) {
+        await expect(product.getByRole("heading", { level: 1, name: "交互组件适配" })).toBeVisible();
+        await picker.evaluate(element => { (element as HTMLDetailsElement).open = true; });
+      }
+      for (const text of ["语义 Token 整理", "交互组件适配", "Playwright 回归测试"]) {
+        await expect((picker ?? product).getByText(text, { exact: true }).first()).toBeVisible();
+      }
+      if (picker) await picker.evaluate(element => { (element as HTMLDetailsElement).open = false; });
+      for (const text of ["24", "94.2%", "18/21"]) {
         await expect(product.getByText(text, { exact: true }).first()).toBeVisible();
       }
       expect(await page.evaluate(() => document.documentElement.scrollWidth)).toBe(screen.width);

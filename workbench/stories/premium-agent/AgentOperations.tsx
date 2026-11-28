@@ -3,20 +3,25 @@ import { Button, Dialog, StatusBadge } from "@mayf3/ui-react";
 import { Icon } from "../visual-directions/Icon";
 import { agentTaskAnchor, agentToolAnchor, approvalStatus, type AgentApproval, type ApprovalDecision, type ToolCall } from "./agent-model";
 
-function ApprovalFacts({ approval }: { approval: AgentApproval }) {
+function ApprovalConsequence({ approval }: { approval: AgentApproval }) {
+  return <div className="agent-approval-impact"><dt>可能后果</dt><dd>{approval.consequence}</dd></div>;
+}
+
+function ApprovalFacts({ approval, includeConsequence = true }: { approval: AgentApproval; includeConsequence?: boolean }) {
   return (
     <dl className="agent-approval-facts">
       <div><dt>申请人</dt><dd><bdi>{approval.requester}</bdi></dd></div>
       <div><dt>责任人</dt><dd>{approval.owner}</dd></div>
       <div className="agent-approval-scope"><dt>审批范围</dt><dd>{approval.scope}</dd></div>
-      <div className="agent-approval-impact"><dt>可能后果</dt><dd>{approval.consequence}</dd></div>
+      {includeConsequence && <ApprovalConsequence approval={approval} />}
     </dl>
   );
 }
 
-export function AgentApprovalCard({ approval, onDecision }: {
+export function AgentApprovalCard({ approval, onDecision, presentation }: {
   approval: AgentApproval;
   onDecision: (id: string, decision: ApprovalDecision) => void;
+  presentation?: "decision";
 }) {
   const title = useId();
   const [dialog, setDialog] = useState<"details" | "confirm">();
@@ -37,7 +42,9 @@ export function AgentApprovalCard({ approval, onDecision }: {
         <h3 id={title}>{approval.title}</h3>
         <StatusBadge intent={high ? "danger" : "neutral"}>{high ? "高风险" : "低风险"}</StatusBadge>
       </header>
-      <ApprovalFacts approval={approval} />
+      {presentation === "decision"
+        ? <dl className="agent-approval-consequence"><ApprovalConsequence approval={approval} /></dl>
+        : <ApprovalFacts approval={approval} />}
       <footer className="agent-approval-footer">
         <span role="status"><StatusBadge intent={status.intent}>{status.label}</StatusBadge></span>
         <div className="agent-action-group">
@@ -56,6 +63,7 @@ export function AgentApprovalCard({ approval, onDecision }: {
           </Button>
         </div>
       </footer>
+      {presentation === "decision" && <ApprovalFacts approval={approval} includeConsequence={false} />}
       <Dialog
         isOpen={Boolean(dialog)}
         onOpenChange={isOpen => { if (!isOpen) setDialog(undefined); }}
