@@ -2,6 +2,8 @@
 
 [PR #1 审计](AUDIT.md) · [V2 本地可交互对照](http://127.0.0.1:49196/?path=/story/art-direction-v2--comparison)
 
+[Mayf3 Hybrid V2 后续精修](HYBRID_REFINEMENT.md)包含同一任务的桌面、手机与控件局部前后对照。
+
 在此工作树执行 `pnpm install --frozen-lockfile` 和 `pnpm dev`，然后在 Storybook 选择 **Art Direction / V2 / Comparison**。上方可以切换四个独立产品、1440 / 768 / 390 预览及深色。Storybook 的方向工具栏提供 RTL。点击「旧 Hybrid」可打开 PR #1 中的 Hybrid。
 
 ## 首屏与信息重心

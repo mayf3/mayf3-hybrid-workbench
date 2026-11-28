@@ -1,0 +1,537 @@
+{
+  "baseline": {
+    "commit": "aab7f853dc492b1c2ed8710901f73773d32ff970",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "comparisonControls": true,
+    "scrollYCssPx": 0,
+    "currentTask": "交互组件适配",
+    "measurements": [
+      {
+        "engine": "chromium",
+        "version": "159.0.8154.6",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 897,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 14
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      },
+      {
+        "engine": "chromium",
+        "version": "159.0.8154.6",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 897,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 14
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      },
+      {
+        "engine": "firefox",
+        "version": "159.0",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 899,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 16
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      },
+      {
+        "engine": "firefox",
+        "version": "159.0",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 899,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 16
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      },
+      {
+        "engine": "webkit",
+        "version": "27.2",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 897,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 14
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      },
+      {
+        "engine": "webkit",
+        "version": "27.2",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 897,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "auto",
+            "widthCssPx": 332,
+            "heightCssPx": 14
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "auto",
+            "widthCssPx": 366,
+            "heightCssPx": 14
+          }
+        ]
+      }
+    ]
+  },
+  "candidate": {
+    "commit": "d02fb97a58ab378710dc149dc5fc145e9000f71d",
+    "viewport": {
+      "width": 390,
+      "height": 844
+    },
+    "comparisonControls": true,
+    "scrollYCssPx": 0,
+    "currentTask": "交互组件适配",
+    "measurements": [
+      {
+        "engine": "chromium",
+        "version": "159.0.8154.6",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 486,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      },
+      {
+        "engine": "chromium",
+        "version": "159.0.8154.6",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 486,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      },
+      {
+        "engine": "firefox",
+        "version": "159.0",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 487,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      },
+      {
+        "engine": "firefox",
+        "version": "159.0",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 487,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      },
+      {
+        "engine": "webkit",
+        "version": "27.2",
+        "theme": "light",
+        "direction": "ltr",
+        "actionBottomCssPx": 487,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              10,
+              92,
+              174
+            ],
+            "trackRgb": [
+              201,
+              220,
+              237
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      },
+      {
+        "engine": "webkit",
+        "version": "27.2",
+        "theme": "dark",
+        "direction": "rtl",
+        "actionBottomCssPx": 487,
+        "rails": [
+          {
+            "element": "progress",
+            "value": 68,
+            "max": 100,
+            "appearance": "none",
+            "widthCssPx": 332,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.6747,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          },
+          {
+            "element": "meter",
+            "value": 18,
+            "max": 21,
+            "appearance": "none",
+            "widthCssPx": 366,
+            "heightCssPx": 6,
+            "cornerRadius": "999px",
+            "measuredFillFraction": 0.8525,
+            "centerFillRows": 6,
+            "fillRgb": [
+              155,
+              208,
+              251
+            ],
+            "trackRgb": [
+              35,
+              55,
+              79
+            ]
+          }
+        ],
+        "verified": {
+          "fullTaskActionInFirstViewport": true,
+          "noHorizontalOverflow": true,
+          "trackAndFillPixelsMatchCssTokens": true,
+          "nativeProgressAndMeterSemantics": true,
+          "keyboardTaskPickerClosesAndRestoresFocus": true,
+          "approvalConfirmationFocusAndEscapeRestore": true
+        }
+      }
+    ]
+  },
+  "sampling": {
+    "screenshotScale": "css",
+    "fillOffsetFraction": 0.25,
+    "trackOffsetFraction": 0.94,
+    "offsetsFollowInlineDirection": true,
+    "ratioEstimateUsesEntireCenterRow": true
+  }
+}
